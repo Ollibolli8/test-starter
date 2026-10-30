@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* Colour tokens. Text pairs pass 4.5:1 in both themes:
+   foreground ~17:1 and muted ~7.8:1 on their background. */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --muted: #525252;
+  --border: #d4d4d4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --muted: #a3a3a3;
+    --border: #404040;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@layer base {
+  /* Fallback so any element without its own focus-visible classes still shows a ring. */
+  :focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 2px;
+  }
+}
