@@ -25,9 +25,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     // Set lang to the UI's language, e.g. "da" for a Danish interface.
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
+      {/* min-h-svh, not h-full: Lenis sets html and body to height:auto. */}
+      <body className="flex min-h-svh flex-col bg-background font-sans text-foreground">
         {/* Without JavaScript nothing animates in, so show everything that would have. */}
         <noscript>
           <style>{"[data-reveal]{opacity:1!important;transform:none!important}"}</style>
