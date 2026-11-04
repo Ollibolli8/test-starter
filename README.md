@@ -9,7 +9,7 @@
 2. In the Claude app's **Code** tab, open the `Developer` folder and write: *"Clone github.com/Ollibolli8/NAME into ~/Developer/NAME."*
 3. Start a new Code session on the new folder (so it reads this repo's rules) and write: *"Run npm ci and npm run dev."* Open http://localhost:3000 and http://localhost:3000/kit.
 4. On vercel.com: **Add New…** → **Project** → pick the repo → **Deploy**. The address it gives is the live link, and every push to `main` updates it.
-5. Write the brief into `HANDOFF.md`, set the tokens in `app/globals.css` and `lib/motion.ts`, check them on `/kit`, then plan before building.
+5. Paste the brief to Claude in plan mode and say what you want. Claude writes it into `HANDOFF.md` and keeps that file up to date. Set the look first (colours, type, motion) and check it on `/kit`, then build.
 
 One sentence: what it is and who it is for.
 

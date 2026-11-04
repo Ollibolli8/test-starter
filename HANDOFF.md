@@ -1,6 +1,6 @@
 # Handoff
 
-Read this first. Update it at the end of every job, so the next agent (Claude, Codex or a person) can carry on without asking. Current state only, one screen.
+For the agents. Claude writes and updates this file from what Olle says in chat; nobody edits it by hand. Read it first, update it at the end of every job, so the next agent (Claude, Codex or a person) can carry on without asking. Current state only, one screen.
 
 ## The brief
 
