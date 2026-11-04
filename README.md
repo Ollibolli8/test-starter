@@ -6,10 +6,9 @@
 ## Before you start (delete this section)
 
 1. On GitHub, open this starter and press **Use this template** → **Create a new repository**. Name it after the case, choose **Public** if it will be sent as a link, and press **Create repository**.
-2. In the Claude app's **Code** tab, open the `Developer` folder and write: *"Clone github.com/Ollibolli8/NAME into ~/Developer/NAME."*
-3. Start a new Code session on the new folder (so it reads this repo's rules) and write: *"Run npm ci and npm run dev."* Open http://localhost:3000 and http://localhost:3000/kit.
-4. On vercel.com: **Add New…** → **Project** → pick the repo → **Deploy**. The address it gives is the live link, and every push to `main` updates it.
-5. Paste the brief to Claude in plan mode and say what you want. Claude writes it into `HANDOFF.md` and keeps that file up to date. Set the look first (colours, type, motion) and check it on `/kit`, then build.
+2. In the Claude app's **Code** tab, start a session on the Mac's **Developer** folder (the one that holds every project, not the one that is only `oliver-portfolio`) and write: *"Clone github.com/Ollibolli8/NAME into ~/Developer/NAME. Work only in that folder from now on: read its CLAUDE.md, AGENTS.md and HANDOFF.md first, then run npm ci and npm run dev."* Open http://localhost:3000 and http://localhost:3000/kit.
+3. On vercel.com: **Add New…** → **Project** → pick the repo → **Deploy**. The address it gives is the live link, and every push to `main` updates it.
+4. Paste the brief to Claude in plan mode and say what you want. Claude writes it into `HANDOFF.md` and keeps that file up to date. Set the look first (colours, type, motion) and check it on `/kit`, then build.
 
 One sentence: what it is and who it is for.
 
