@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
-/* Colour tokens. Text pairs pass 4.5:1 in both themes:
-   foreground ~17:1 and muted ~7.8:1 on their background. */
+/* Design tokens. Set these first on test day, then look at /kit.
+   Text pairs pass 4.5:1 in both themes: foreground ~17:1 and muted ~7.8:1 on their background.
+   accent starts as the foreground, so nothing is coloured until the brief gives a reason. */
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --muted: #525252;
   --border: #d4d4d4;
+  --accent: #171717;
+  --accent-foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +18,8 @@
     --foreground: #ededed;
     --muted: #a3a3a3;
     --border: #404040;
+    --accent: #ededed;
+    --accent-foreground: #0a0a0a;
   }
 }
 
@@ -23,8 +28,20 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+@theme {
+  /* The easing curve, as `ease-out-soft`. Same curve as `ease` in lib/motion.ts; change both together. */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* One display size that scales with the screen, as `text-display`. */
+  --text-display: clamp(2.75rem, 1.6rem + 5vw, 6rem);
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.035em;
 }
 
 @layer base {
@@ -32,5 +49,16 @@
   :focus-visible {
     outline: 2px solid var(--foreground);
     outline-offset: 2px;
+  }
+
+  /* Even line lengths in headings, no lone last word in paragraphs. */
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 }

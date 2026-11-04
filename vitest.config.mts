@@ -8,6 +8,8 @@ export default defineConfig({
     // @testing-library/react and set `environment: "jsdom"`.
     environment: "node",
     include: ["**/*.test.{ts,tsx}"],
+    // So `npm run check` stays green after the example tests are deleted.
+    passWithNoTests: true,
     exclude: [...configDefaults.exclude, ".next/**"],
   },
 });
