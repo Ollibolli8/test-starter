@@ -5,10 +5,16 @@
 
 ## Before you start (delete this section)
 
-1. On GitHub, open this starter and press **Use this template** → **Create a new repository**. Name it after the case, choose **Public** if it will be sent as a link, and press **Create repository**.
-2. In the Claude app's **Code** tab, start a session on the Mac's **Developer** folder (the one that holds every project, not the one that is only `oliver-portfolio`) and write: *"Clone github.com/Ollibolli8/NAME into ~/Developer/NAME. Work only in that folder from now on: read its CLAUDE.md, AGENTS.md and HANDOFF.md first, then run npm ci and npm run dev."* Open http://localhost:3000 and http://localhost:3000/kit.
-3. On vercel.com: **Add New…** → **Project** → pick the repo → **Deploy**. The address it gives is the live link, and every push to `main` updates it.
-4. Paste the brief to Claude in plan mode and say what you want. Claude writes it into `HANDOFF.md` and keeps that file up to date. Set the look first (colours, type, motion) and check it on `/kit`, then build.
+In the Claude app's **Code** tab, start a session on the Mac's **Developer** folder (the one that holds every project) and type **`/new-test`**. It's the same for a practice and the real test. It asks for a name, where the brief is (a doc, a paste, a PDF or a link) and whether it's practice or real. Then it:
+
+1. makes a private repo from this starter, clones it into `~/Developer/NAME`, installs it and starts it on http://localhost:3200,
+2. writes the brief into `BRIEF.md`, and the start time and milestones into `HANDOFF.md`,
+3. puts it on Vercel when you say yes (every push to `main` updates the live link),
+4. plans the build with you: questions for the client, the core flow, what's left out, a first look on `/kit`.
+
+Without the command, do it by hand: on GitHub press **Use this template** (private), then tell Claude *"Clone github.com/Ollibolli8/NAME into ~/Developer/NAME. Work only in that folder: read its CLAUDE.md, AGENTS.md and HANDOFF.md first, then run npm ci and npm run dev."* Then on vercel.com: **Add New…** → **Project** → the repo → **Deploy**.
+
+For a real test, the studio needs to see the repo at hand-in: make it public then, or invite their reviewer on GitHub.
 
 One sentence: what it is and who it is for.
 

@@ -4,7 +4,7 @@ For the agents. Claude writes and updates this file from what Olle says in chat;
 
 ## The brief
 
-<!-- One line, and where the full brief is. -->
+<!-- One line; Practice, or Real test for <studio>; where the full brief is (BRIEF.md, and the doc or link). Started at (Danish time) and the milestones. /new-test fills this in. -->
 
 ## Now
 
