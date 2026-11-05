@@ -10,7 +10,8 @@ In the Claude app's **Code** tab, start a session on the Mac's **Developer** fol
 1. makes a private repo from this starter, clones it into `~/Developer/NAME`, installs it and starts it on http://localhost:3200,
 2. writes the brief into `BRIEF.md`, and the start time and milestones into `HANDOFF.md`,
 3. puts it on Vercel when you say yes (every push to `main` updates the live link),
-4. plans the build with you: questions for the client, the core flow, what's left out, a first look on `/kit`.
+4. plans the build with you: questions for the client, the core flow, what's left out, a first look on `/kit`,
+5. near the end, puts your design into Figma as editable layers for the designer, linked from the README.
 
 Without the command, do it by hand: on GitHub press **Use this template** (private), then tell Claude *"Clone github.com/Ollibolli8/NAME into ~/Developer/NAME. Work only in that folder: read its CLAUDE.md, AGENTS.md and HANDOFF.md first, then run npm ci and npm run dev."* Then on vercel.com: **Add New…** → **Project** → the repo → **Deploy**.
 
