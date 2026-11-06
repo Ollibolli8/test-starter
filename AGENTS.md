@@ -14,6 +14,14 @@ Read by every agent (Claude through CLAUDE.md, Codex directly). Read `HANDOFF.md
 
 Commands: `npm run dev` (local server), `npm run check` (typecheck, lint, test, build). Run `npm run check` before every commit and fix what it reports; never commit red. GitHub runs the same check on every push.
 
+### The brief comes first
+
+- Before any code, fill README → The brief: who, when (the moment of use), what they must understand, feel and do, and what this client does that the alternative doesn't. Use the brief and desk research into the moment of use; ask Olle for any line you can't fill. Everything after answers to those lines.
+- Every UI choice has a "because" tied to that person and moment ("large type, because it's read in a glance with one hand busy"). Taste is not a reason. Log it that way in README → Decisions.
+- Restraint is a choice: name at least two things deliberately not built, and why, in README → Not built, and why.
+- Numbers on screen: each has a unit, a comparison and a verdict ("1,84 kr/kWh · 40 % under nu · billigt"). One number per thing; never two that disagree.
+- The client's difference gets one UI moment that proves it, and that moment is the page's one motion moment (see Motion).
+
 ### Stack (fixed)
 
 - Next.js App Router, TypeScript in strict mode (with `noUncheckedIndexedAccess`), Tailwind CSS, Motion (`motion/react`), Lenis.
@@ -60,7 +68,7 @@ Design and build loading, empty, error, offline and stale-data states for every 
 ### Working with Olle
 
 - Olle owns the idea, art direction and design; agents build. Ask before a design decision, don't make it silently.
-- Log each decision as one line in README → Decisions as you go (what and why, in plain words).
+- Log each decision as one line in README → Decisions as you go (what, because …, in plain words).
 - When asked, explain every file you wrote in plain words: what it does, why it is there and what would break without it.
 - Keep the README sections filled in as the work moves, so it is ready to hand in at any moment.
 
@@ -70,3 +78,4 @@ Design and build loading, empty, error, offline and stale-data states for every 
 2. Unused examples deleted (`app/kit/`, `lib/cart/`), no leftover starter copy ("Starter" in `app/layout.tsx` metadata and `app/page.tsx`).
 3. `npm run check` green, and the live link opens without a login.
 4. Checked at 390 px and on desktop, with the keyboard, and with reduced motion on.
+5. A ten-second test with someone who hasn't seen it: what they said it was and what they'd do, written in README → Ten-second test.

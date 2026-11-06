@@ -18,24 +18,36 @@ Without the command, do it by hand: on GitHub press **Use this template** (priva
 
 For a real test, the studio needs to see the repo at hand-in: make it public then, or invite their reviewer on GitHub.
 
+Whichever way you start, the five lines under **The brief** come first, before any code.
+
 One sentence: what it is and who it is for.
 
 **Live:** <!-- https://….vercel.app (opens without a login) -->
 
-## The idea
+## The brief
 
-<!-- The problem in my own words, and the one moment the whole thing is built around. Everything else stays calm around it. -->
+<!-- Five lines, written in the first 15 minutes before any code. Every choice below answers to them. -->
+
+- **Who:** <!-- a person, not a segment: "a parent with a full dishwasher" -->
+- **When:** <!-- the moment of use: where, on what device, one hand or two, in what state of mind -->
+- **Understand:** <!-- what they must get within ten seconds -->
+- **Feel:** <!-- -->
+- **Do:** <!-- the one thing they do next -->
+- **Unlike the alternative:** <!-- what this client does that others don't, and the one moment in the UI that proves it. That moment gets the motion; everything else stays calm. -->
 
 ## Who uses it and how they feel
 
-<!-- Who, where, in what state of mind. That decides everything below. -->
+<!-- What I found out about the person and the moment of use, and where from. It backs up the five lines above. -->
 
 ## Design choices and why
 
-- **Colour:** <!-- what I chose, and why for this person in this situation -->
-- **Type:** <!-- -->
-- **Motion:** <!-- what moves, why, and what happens with reduced motion on -->
+<!-- Each line: what I chose, because … (the person or the moment above, never taste). -->
+
+- **Colour:** <!-- e.g. calm, because it's money, not an alarm -->
+- **Type:** <!-- e.g. the answer in large type, because it's read in a glance with one hand busy -->
+- **Motion:** <!-- what moves, because …, and what happens with reduced motion on -->
 - **Layout:** <!-- -->
+- **Numbers:** <!-- every number has a unit, a comparison and a verdict ("1,84 kr/kWh · 40 % under nu · billigt"); one number per thing, never two that disagree -->
 
 ## Assumptions
 
@@ -43,7 +55,15 @@ One sentence: what it is and who it is for.
 
 ## Decisions
 
-<!-- A running log while building, one line each: what I chose and why. Cut to the 4–5 that matter before hand-in. -->
+<!-- A running log while building, one line each: what I chose, because … Cut to the 4–5 that matter before hand-in. -->
+
+## Not built, and why
+
+<!-- At least two things left out on purpose, and why that's right for this person (til- og fravalg). What I ran out of time for goes under "What I'd do next" instead. -->
+
+## Ten-second test
+
+<!-- Someone who had never seen it, ten seconds on the phone: what they said it was, what they'd do, and what I changed after. -->
 
 ## What I'd need from the team
 
@@ -51,7 +71,7 @@ One sentence: what it is and who it is for.
 
 ## What I'd do next
 
-<!-- Concrete and tied to the brief: what I left out for time, what it costs, and the next steps in order. -->
+<!-- Concrete and tied to the brief: what I left out for time, what I'd test with real users, and the next steps in order. -->
 
 ## How it was built
 
