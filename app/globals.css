@@ -1,30 +1,51 @@
 @import "tailwindcss";
 
-/* Design tokens. Set these first on test day, then look at /kit.
+/* Design tokens. Set these from the brief first (the person, the moment, the client's own world), then look at /kit.
    Text pairs pass 4.5:1 in both themes: foreground ~17:1 and muted ~7.8:1 on their background.
    accent starts as the foreground, so nothing is coloured until the brief gives a reason. */
 :root {
   --background: #ffffff;
+  /* Cards and sheets that sit on the background, and what glass falls back to. */
+  --raised: #f7f7f7;
   --foreground: #171717;
   --muted: #525252;
   --border: #d4d4d4;
   --accent: #171717;
   --accent-foreground: #ffffff;
+
+  /* Glass (the `glass` and `glass-strong` utilities below). The tint is what's left of the panel's own colour;
+     glass-strong carries text, so its tint is thick enough for 4.5:1 over anything that passes under it. */
+  --glass-tint: rgb(255 255 255 / 0.5);
+  --glass-tint-strong: rgb(255 255 255 / 0.78);
+  /* The rim: a lit edge where light enters (top left) and a fainter one where it leaves (bottom right). */
+  --glass-light: rgb(255 255 255 / 0.85);
+  --glass-edge: rgb(255 255 255 / 0.35);
+  --glass-line: rgb(0 0 0 / 0.08);
+  --glass-shadow: rgb(0 0 0 / 0.18);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
+    --raised: #171717;
     --foreground: #ededed;
     --muted: #a3a3a3;
     --border: #404040;
     --accent: #ededed;
     --accent-foreground: #0a0a0a;
+
+    --glass-tint: rgb(30 30 30 / 0.45);
+    --glass-tint-strong: rgb(24 24 24 / 0.78);
+    --glass-light: rgb(255 255 255 / 0.22);
+    --glass-edge: rgb(255 255 255 / 0.08);
+    --glass-line: rgb(255 255 255 / 0.06);
+    --glass-shadow: rgb(0 0 0 / 0.5);
   }
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-raised: var(--raised);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-border: var(--border);
@@ -38,13 +59,86 @@
   /* The easing curve, as `ease-out-soft`. Same curve as `ease` in lib/motion.ts; change both together. */
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* One display size that scales with the screen, as `text-display`. */
-  --text-display: clamp(2.75rem, 1.6rem + 5vw, 6rem);
-  --text-display--line-height: 0.95;
+  /* The answer on the app's first screen, as `text-display`: read in a glance, on a phone. */
+  --text-display: clamp(2.5rem, 1.9rem + 2.6vw, 3.25rem);
+  --text-display--line-height: 0.98;
   --text-display--letter-spacing: -0.035em;
+
+  /* The stage's headline on a desktop, as `text-hero`. */
+  --text-hero: clamp(2.5rem, 1rem + 2.4vw, 3.75rem);
+  --text-hero--line-height: 0.98;
+  --text-hero--letter-spacing: -0.04em;
+
+  /* Small capitals for labels, as `text-label` (with `uppercase font-mono`). */
+  --text-label: 0.6875rem;
+  --text-label--line-height: 1.2;
+  --text-label--letter-spacing: 0.08em;
+}
+
+/* Glass: the iPhone's own material for chrome that floats over moving content (a tab bar, a sheet, a floating
+   control). It blurs and lifts what passes under it, so the content stays in view behind the control. Over a flat
+   background there is nothing to bend and it reads as grey: put it over the hero's colour, an image or a list.
+   Rules (AGENTS.md → The first version is the product): chrome only, never behind body text or a number that must
+   read; text on glass uses glass-strong. Solid where the visitor asks for less transparency, where the browser
+   can't blur, and in high-contrast mode. */
+@utility glass {
+  background-color: var(--glass-tint);
+  -webkit-backdrop-filter: blur(18px) saturate(1.8);
+  backdrop-filter: blur(18px) saturate(1.8);
+  box-shadow:
+    inset 1px 1px 0 0 var(--glass-light),
+    inset -1px -1px 0 0 var(--glass-edge),
+    inset 0 0 0 0.5px var(--glass-line),
+    0 12px 32px -12px var(--glass-shadow),
+    0 2px 6px -3px var(--glass-shadow);
+
+  @media (prefers-reduced-transparency: reduce) {
+    background-color: var(--raised);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    background-color: var(--raised);
+  }
+
+  @media (forced-colors: active) {
+    border: 1px solid CanvasText;
+  }
+}
+
+@utility glass-strong {
+  background-color: var(--glass-tint-strong);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  backdrop-filter: blur(24px) saturate(1.6);
+  box-shadow:
+    inset 1px 1px 0 0 var(--glass-light),
+    inset -1px -1px 0 0 var(--glass-edge),
+    inset 0 0 0 0.5px var(--glass-line),
+    0 16px 40px -14px var(--glass-shadow),
+    0 2px 8px -3px var(--glass-shadow);
+
+  @media (prefers-reduced-transparency: reduce) {
+    background-color: var(--raised);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    background-color: var(--raised);
+  }
+
+  @media (forced-colors: active) {
+    border: 1px solid CanvasText;
+  }
 }
 
 @layer base {
+  html,
+  body {
+    background: var(--background);
+  }
+
   /* Fallback so any element without its own focus-visible classes still shows a ring. */
   :focus-visible {
     outline: 2px solid var(--foreground);
@@ -60,5 +154,14 @@
 
   p {
     text-wrap: pretty;
+  }
+}
+
+/* The desktop stage's phone (components/stage.tsx): 868 px tall, scaled down to fit a shorter window, so the app
+   inside keeps an iPhone's real layout. tan(atan2(a, b)) is a / b as a plain number, which CSS can't otherwise get
+   from two lengths. */
+@media (min-width: 64rem) {
+  .device-fit {
+    scale: min(1, tan(atan2(100dvh - 2.5rem, 868px)));
   }
 }

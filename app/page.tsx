@@ -1,25 +1,25 @@
-import Link from "next/link";
-import { Reveal } from "@/components/reveal";
+import { Suspense } from "react";
+import { ExampleApp, ExampleStory } from "./example-app";
+import { AppShell } from "@/components/app-shell";
+import { Stage } from "@/components/stage";
 
+// The page is the app on its stage: full screen on a phone, in a phone with the idea and the situations on a
+// desktop. Suspense because the app reads the situation from the address; the server's HTML is the loading frame.
+// Replace ./example-app with the brief's app, and keep this shape.
 export default function Home() {
   return (
-    <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col justify-center gap-3 px-5 py-16">
-      <Reveal>
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Starter</h1>
-      </Reveal>
-      <Reveal delay={0.06}>
-        <p className="text-base text-muted">
-          Next.js, TypeScript, Tailwind CSS and Motion, ready for the brief.
-        </p>
-      </Reveal>
-      <Reveal delay={0.12}>
-        <Link
-          href="/kit"
-          className="self-start rounded-sm font-medium underline underline-offset-4 hover:no-underline"
-        >
-          Open the kit
-        </Link>
-      </Reveal>
-    </main>
+    <Suspense
+      fallback={
+        <Stage story={<ExampleStory />} controls={null}>
+          <AppShell>
+            <p role="status" className="px-5 pt-16 text-muted">
+              Loading…
+            </p>
+          </AppShell>
+        </Stage>
+      }
+    >
+      <ExampleApp />
+    </Suspense>
   );
 }

@@ -1,10 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 import { Providers } from "@/components/providers";
+import { ServiceWorker } from "@/components/service-worker";
+import { APP } from "@/lib/app";
 
-// Placeholder type. Swap for the brief's fonts here and in --font-sans / --font-mono in globals.css.
+// Placeholder type. Pick the brief's fonts (from the client's own world, see the craft skill) and swap them here
+// and in --font-sans / --font-mono in globals.css.
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -16,17 +19,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Starter",
-  description: "Starting point for a timed client test.",
+  title: APP.name,
+  description: APP.description,
+  applicationName: APP.name,
+  // Opens full screen from the home screen, with the status bar over the app (it draws under the notch itself).
+  appleWebApp: { capable: true, title: APP.shortName, statusBarStyle: "default" },
+  formatDetection: { telephone: false },
+};
+
+export const viewport: Viewport = {
+  // So the app can run under the notch and above the home bar (env(safe-area-inset-*), --app-top / --app-bottom).
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: APP.colour.light },
+    { media: "(prefers-color-scheme: dark)", color: APP.colour.dark },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    // Set lang to the UI's language, e.g. "da" for a Danish interface.
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-    >
+    <html lang={APP.lang} className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       {/* min-h-svh, not h-full: Lenis sets html and body to height:auto. */}
       <body className="flex min-h-svh flex-col bg-background font-sans text-foreground">
         {/* Without JavaScript nothing animates in, so show everything that would have. */}
@@ -34,6 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <style>{"[data-reveal]{opacity:1!important;transform:none!important}"}</style>
         </noscript>
         <Providers>{children}</Providers>
+        <ServiceWorker />
       </body>
     </html>
   );

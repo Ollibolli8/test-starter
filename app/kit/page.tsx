@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { BasketExample } from "./basket-example";
+import { GlassExample } from "./glass-example";
 import { ScrollProgress } from "./scroll-progress";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 
 const swatches = [
   { name: "Background", token: "--background", className: "bg-background" },
+  { name: "Raised", token: "--raised", className: "bg-raised" },
   { name: "Foreground", token: "--foreground", className: "bg-foreground" },
   { name: "Muted", token: "--muted", className: "bg-muted" },
   { name: "Border", token: "--border", className: "bg-border" },
@@ -61,7 +63,9 @@ export default function Kit() {
             Type
           </h2>
           <div className="flex flex-col gap-5">
-            <p className="text-display font-semibold">Display</p>
+            <p className="text-hero font-semibold">Hero, the stage</p>
+            <p className="text-display font-semibold">Display, the answer</p>
+            <p className="font-mono text-label text-muted uppercase">Label, text-label</p>
             <p className="text-3xl font-semibold tracking-tight">Heading, text-3xl</p>
             <p className="max-w-prose text-base">
               Body, text-base. A paragraph long enough to show the line length and the leading, so the reading
@@ -123,6 +127,8 @@ export default function Kit() {
             ))}
           </ul>
         </section>
+
+        <GlassExample />
 
         <BasketExample />
       </main>
