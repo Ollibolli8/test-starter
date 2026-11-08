@@ -11,7 +11,7 @@ In the Claude app's **Code** tab, start a session on the Mac's **Developer** fol
 2. writes the brief into `BRIEF.md`, and the start time and milestones into `HANDOFF.md`,
 3. puts it on Vercel when you say yes (every push to `main` updates the live link),
 4. finds out who uses it (fifteen minutes of desk research into the person and their moment, with sources and at least one primary signal such as app reviews) and writes it below under "Who uses it and how they feel", starts "Choices from the person" (each choice and what it ruled out, traced to a fact about them), and writes the facts of the world it lives in (how the data arrives, the rules, the money, the formats) under "The details that work",
-5. plans the build with you from that: questions for the client, the core flow, what's left out, and two or three looks in a line each for you to pick from; then builds the first version whole, dark only: the app at the live link (a phone first, laid out for a desktop too), and the presentation at `/stage` (AGENTS.md → The first version is the product), and walks it as the person in every situation before showing you (AGENTS.md → The details work),
+5. plans the build with you from that: questions for the client, the core flow and what's left out; then finds the look (about 20 minutes: what everyone in the trade does is ruled out, ten ideas from outside apps, and three built as real phone screens from safe to wild, side by side at http://localhost:3200/looks for you to pick from); then builds the first version whole, dark only: the app at the live link (a phone first, laid out for a desktop too), and the presentation at `/stage` (AGENTS.md → The first version is the product), and walks it as the person in every situation before showing you (AGENTS.md → The details work),
 6. near the end, puts your design into Figma as editable layers for the designer, linked from the README.
 
 Without the command, do it by hand: on GitHub press **Use this template** (private), then tell Claude *"Clone github.com/Ollibolli8/NAME into ~/Developer/NAME. Work only in that folder: read its CLAUDE.md, AGENTS.md and HANDOFF.md first, then run npm ci and npm run dev."* Then on vercel.com: **Add New…** → **Project** → the repo → **Deploy**.
@@ -75,7 +75,8 @@ One sentence: what it is and who it is for.
 ## Decisions
 
 <!-- A running log while building, one line each: what I chose, because … Cut to the 4–5 that matter before hand-in.
-     Choices the person shows go in Choices from the person; this is for the rest (the look picked and its alternatives, craft picks, stack). -->
+     Choices the person shows go in Choices from the person; this is for the rest (Ruled out: what everyone in the trade
+     does; the look picked and the two that lost, each with why; craft picks; stack). -->
 
 ## Not built, and why
 
@@ -86,8 +87,9 @@ One sentence: what it is and who it is for.
 <!-- The order for the presentation, person first: 1. who it's for in half a minute (the moment, three facts, what each
      changed, and how the client's own data would check them: support tickets, addresses, usage), then one sentence for
      every row of Choices from the person, to be said aloud: "Cheap and dear differ by height, not just colour, because
-     5–8 % of Danish men can't tell this green from this orange."; 2. the app on /stage,
-     the situations that show the details; 3. the desktop at /; 4. what I'd need and what's next. -->
+     5–8 % of Danish men can't tell this green from this orange."; 2. the three looks at /looks, what the trade does and
+     why this one; 3. the app on /stage, the situations that show the details; 4. the desktop at /; 5. what I'd need and
+     what's next. -->
 
 ## Ten-second test
 

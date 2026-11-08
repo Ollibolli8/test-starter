@@ -5,7 +5,7 @@ description: The craft menu for a test case's first version - the signature form
 
 # Craft for the first version
 
-The test is judged on an iPhone in Safari and on a laptop in the presentation. Every technique here works in both, fits in a three-hour test, and has a still version. Pick one to three, each with a because tied to the brief (README → Decisions). The signature form is always one of them. Taken from Olle's craft file in the portfolio (`docs/creative-tools.md`), cut to what earns its place in a timed app.
+The test is judged on an iPhone in Safari and on a laptop in the presentation. Every technique here works in both, fits in a three-hour test, and has a still version. Find the look first (`.claude/skills/look/SKILL.md`); this is the menu to build it with. Pick one to three, each with a because tied to the brief (README → Decisions). The signature form is always one of them. Taken from Olle's craft file in the portfolio (`docs/creative-tools.md`), cut to what earns its place in a timed app.
 
 ## 1. The signature form (always)
 
@@ -80,3 +80,4 @@ Check each screenshot against this before calling the first version ready:
 9. Dark only, and designed for dark, not a light design inverted: glass, shadows and the form's colours made for it; it stays dark with the system in light mode.
 10. Nothing around the app: `/` is the app alone, `/stage` the app with its situations; the idea is said in the presentation, not printed beside the phone.
 11. Under reduced motion, the motion moment still communicates (a fade, or the end state).
+12. It couldn't be any company's app: nothing from the trade's "Ruled out" list is on the screen unless turned on purpose, and the form still reads as the person's world, not a costume.
