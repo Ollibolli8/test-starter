@@ -10,7 +10,7 @@ In the Claude app's **Code** tab, start a session on the Mac's **Developer** fol
 1. makes a private repo from this starter, clones it into `~/Developer/NAME`, installs it and starts it on http://localhost:3200,
 2. writes the brief into `BRIEF.md`, and the start time and milestones into `HANDOFF.md`,
 3. puts it on Vercel when you say yes (every push to `main` updates the live link),
-4. finds out who uses it (ten minutes of desk research into the moment of use) and writes it below under "Who uses it and how they feel", and the facts of the world it lives in (how the data arrives, the rules, the money, the formats) under "The details that work",
+4. finds out who uses it (ten minutes of desk research into the person and their moment, with sources) and writes it below under "Who uses it and how they feel", starts "Choices from the person" (each choice and what it ruled out, traced to a fact about them), and writes the facts of the world it lives in (how the data arrives, the rules, the money, the formats) under "The details that work",
 5. plans the build with you from that: questions for the client, the core flow, what's left out, and two or three looks in a line each for you to pick from; then builds the first version whole, dark only: the app at the live link, and the presentation at `/stage` (AGENTS.md → The first version is the product), and walks it as the person in every situation before showing you (AGENTS.md → The details work),
 6. near the end, puts your design into Figma as editable layers for the designer, linked from the README.
 
@@ -37,7 +37,19 @@ One sentence: what it is and who it is for.
 
 ## Who uses it and how they feel
 
-<!-- What I found out about the person and the moment of use, and where from. It backs up the five lines above. -->
+<!-- Written before any code. A short scenario of the moment (marked as assumptions), then at least five facts about
+     the PERSON, not the data, each with its source and what it makes the app do:
+     "- 8 % of Danish men can't tell red from green (source, date) → cheap and dear never differ by colour alone"
+     Then one line on how production would check them (five customers, support tickets, watch someone use it). -->
+
+## Choices from the person
+
+<!-- One row per choice that shows, filled in while building. The reason is a fact or part of the moment above, never
+     the data, the screen or taste. At least one row each for colour, type, motion, layout, wording and something left out.
+     e.g. | No red anywhere | panicked, so red reads as alarm (fact) | red for dear prices, a blinking countdown | -->
+
+| Choice | Because (the person) | Ruled out |
+| --- | --- | --- |
 
 ## Design choices and why
 
@@ -62,7 +74,8 @@ One sentence: what it is and who it is for.
 
 ## Decisions
 
-<!-- A running log while building, one line each: what I chose, because … Cut to the 4–5 that matter before hand-in. -->
+<!-- A running log while building, one line each: what I chose, because … Cut to the 4–5 that matter before hand-in.
+     Choices the person shows go in Choices from the person; this is for the rest (the look picked and its alternatives, craft picks, stack). -->
 
 ## Not built, and why
 
