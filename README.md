@@ -84,7 +84,9 @@ One sentence: what it is and who it is for.
 ## Presenting it
 
 <!-- The order for the presentation, person first: 1. who it's for in half a minute (the moment, three facts, what each
-     changed, and how the client's own data would check them: support tickets, addresses, usage); 2. the app on /stage,
+     changed, and how the client's own data would check them: support tickets, addresses, usage), then one sentence for
+     every row of Choices from the person, to be said aloud: "Cheap and dear differ by height, not just colour, because
+     5–8 % of Danish men can't tell this green from this orange."; 2. the app on /stage,
      the situations that show the details; 3. the desktop at /; 4. what I'd need and what's next. -->
 
 ## Ten-second test
