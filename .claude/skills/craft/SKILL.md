@@ -77,6 +77,6 @@ Check each screenshot against this before calling the first version ready:
 6. No lone word on a heading's last line; no truncated label; nothing under the bar or the notch.
 7. One accent, used for one meaning.
 8. Every situation looks designed, not like an error page: the empty and offline states keep the signature form and the hero's type.
-9. Dark mode is designed, not inverted: glass, shadows and the form's colours checked in it.
-10. The stage's headline is the person's question or the client's promise, never the app's name.
+9. Dark only, and designed for dark, not a light design inverted: glass, shadows and the form's colours made for it; it stays dark with the system in light mode.
+10. Nothing around the app: `/` is the app alone, `/stage` the app with its situations; the idea is said in the presentation, not printed beside the phone.
 11. Under reduced motion, the motion moment still communicates (a fade, or the end state).

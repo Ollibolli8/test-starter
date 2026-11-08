@@ -4,7 +4,7 @@ import { useState } from "react";
 import { CountUp } from "@/components/count-up";
 import { Segmented } from "@/components/segmented";
 
-/** Glass over colour, the segmented control and a count-up: tune the glass tokens here, in light and dark. */
+/** Glass over colour, the segmented control and a count-up: tune the glass tokens here, in the dark theme. */
 export function GlassExample() {
   const [value, setValue] = useState<"a" | "b">("a");
   return (

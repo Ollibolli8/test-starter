@@ -2,8 +2,9 @@
 
 // The app's frame: a header under the notch, one scrolling screen, a bar at the bottom where the thumb is, and a
 // layer for sheets. The bar floats over the screen in glass, so the content passes under it and stays in view.
-// It lays out on the phone's screen (the stage's device on a desktop), so everything is `absolute`, never `fixed`,
-// and keeps clear of the notch and the home bar through --app-top and --app-bottom (set by components/stage.tsx).
+// It lays out in its frame (the screen on a phone, a column at / on a desktop, the drawn phone at /stage), so
+// everything is `absolute`, never `fixed`, and keeps clear of the notch and the home bar through --app-top and
+// --app-bottom (set by components/app-page.tsx and components/stage.tsx).
 
 import { useEffect, useRef, type ReactNode } from "react";
 

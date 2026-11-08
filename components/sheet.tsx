@@ -28,7 +28,7 @@ export function Sheet({ open, onClose, title, closeLabel = "Close", children }: 
     if (!open) return;
     opener.current = document.activeElement;
     panel.current?.focus();
-    const behind = Array.from(document.querySelectorAll<HTMLElement>("[data-stage], [data-behind-sheet]"));
+    const behind = Array.from(document.querySelectorAll<HTMLElement>("[data-beside], [data-behind-sheet]"));
     behind.forEach((el) => {
       el.inert = true;
     });

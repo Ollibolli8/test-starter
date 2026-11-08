@@ -8,8 +8,8 @@ export const APP = {
   description: "Starting point for a timed client test.",
   /** The interface's language, also set on <html lang>: "da" for a Danish interface. */
   lang: "en",
-  /** The phone's browser bars and the install splash, light and dark: the app's background. */
-  colour: { light: "#ffffff", dark: "#0a0a0a" },
-  /** The live link once it's on Vercel; the stage shows it as "open it on your phone". */
+  /** The app's background (dark only, app/globals.css): the phone's browser bars, the install splash, the icon. */
+  colour: "#0a0a0a",
+  /** The live link once it's on Vercel; shown beside the app on a desktop and on /stage as "open it on your phone". */
   liveUrl: "" as string,
 } as const;

@@ -1,46 +1,32 @@
 @import "tailwindcss";
 
 /* Design tokens. Set these from the brief first (the person, the moment, the client's own world), then look at /kit.
-   Text pairs pass 4.5:1 in both themes: foreground ~17:1 and muted ~7.8:1 on their background.
+   Dark only, always (Olle, 8 November): one theme, designed for dark, whatever the brief. Find the brief's own reason
+   for it and write it in README → Design choices → Colour (Strømpris: on an OLED screen a black pixel is off, so an
+   app about saving power spends less of it).
+   Text pairs pass 4.5:1: foreground ~17:1, muted ~7.8:1 on the background and ~7:1 on raised.
    accent starts as the foreground, so nothing is coloured until the brief gives a reason. */
 :root {
-  --background: #ffffff;
+  color-scheme: dark;
+
+  --background: #0a0a0a;
   /* Cards and sheets that sit on the background, and what glass falls back to. */
-  --raised: #f7f7f7;
-  --foreground: #171717;
-  --muted: #525252;
-  --border: #d4d4d4;
-  --accent: #171717;
-  --accent-foreground: #ffffff;
+  --raised: #171717;
+  --foreground: #ededed;
+  --muted: #a3a3a3;
+  --border: #404040;
+  --accent: #ededed;
+  --accent-foreground: #0a0a0a;
 
   /* Glass (the `glass` and `glass-strong` utilities below). The tint is what's left of the panel's own colour;
      glass-strong carries text, so its tint is thick enough for 4.5:1 over anything that passes under it. */
-  --glass-tint: rgb(255 255 255 / 0.5);
-  --glass-tint-strong: rgb(255 255 255 / 0.78);
+  --glass-tint: rgb(30 30 30 / 0.45);
+  --glass-tint-strong: rgb(24 24 24 / 0.78);
   /* The rim: a lit edge where light enters (top left) and a fainter one where it leaves (bottom right). */
-  --glass-light: rgb(255 255 255 / 0.85);
-  --glass-edge: rgb(255 255 255 / 0.35);
-  --glass-line: rgb(0 0 0 / 0.08);
-  --glass-shadow: rgb(0 0 0 / 0.18);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --raised: #171717;
-    --foreground: #ededed;
-    --muted: #a3a3a3;
-    --border: #404040;
-    --accent: #ededed;
-    --accent-foreground: #0a0a0a;
-
-    --glass-tint: rgb(30 30 30 / 0.45);
-    --glass-tint-strong: rgb(24 24 24 / 0.78);
-    --glass-light: rgb(255 255 255 / 0.22);
-    --glass-edge: rgb(255 255 255 / 0.08);
-    --glass-line: rgb(255 255 255 / 0.06);
-    --glass-shadow: rgb(0 0 0 / 0.5);
-  }
+  --glass-light: rgb(255 255 255 / 0.22);
+  --glass-edge: rgb(255 255 255 / 0.08);
+  --glass-line: rgb(255 255 255 / 0.06);
+  --glass-shadow: rgb(0 0 0 / 0.5);
 }
 
 @theme inline {
@@ -63,11 +49,6 @@
   --text-display: clamp(2.5rem, 1.9rem + 2.6vw, 3.25rem);
   --text-display--line-height: 0.98;
   --text-display--letter-spacing: -0.035em;
-
-  /* The stage's headline on a desktop, as `text-hero`. */
-  --text-hero: clamp(2.5rem, 1rem + 2.4vw, 3.75rem);
-  --text-hero--line-height: 0.98;
-  --text-hero--letter-spacing: -0.04em;
 
   /* Small capitals for labels, as `text-label` (with `uppercase font-mono`). */
   --text-label: 0.6875rem;

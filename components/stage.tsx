@@ -1,20 +1,21 @@
 "use client";
 
-// The presentation. On a phone the app fills the screen. On a desktop the same link becomes the stage: the app
-// running in a phone in the middle, the idea on the left (the hero), and every situation it handles on the right,
-// switched live, so a reviewer can walk every state of the real app without a slide. The stage can be in the
-// studio's language while the app stays in the brief's (lang on each column).
+// The presentation, at /stage: what Olle shares on screen while he presents. On a desktop, the app running in a phone
+// in the middle, the live link and QR code on the left so the room can open it, and every situation it handles on the
+// right, switched live, so every state of the real app is one click away. No pitch beside it: Olle says the idea, the
+// README writes it down. The link handed in is / (components/app-page.tsx), the app on its own. On a phone /stage is
+// just the app. The columns can be in the studio's language while the app stays in the brief's (lang).
 //
 // The app inside lays itself out on the phone's screen, not the window: use `absolute`, never `fixed`, and the
 // --app-top / --app-bottom insets for the notch and the home bar (components/app-shell.tsx does both).
 
 import { useEffect, useState, type ReactNode } from "react";
+import { OnStage } from "@/components/on-stage";
+import { OpenOnPhone } from "@/components/open-on-phone";
 import type { Situation } from "@/lib/situations";
 import { APP } from "@/lib/app";
 
 interface StageProps {
-  /** The left column: the idea, as the stage's hero. Use <StageStory>. */
-  story: ReactNode;
   /** The right column: the situations and any demo controls. Use <SituationList>. */
   controls: ReactNode;
   /** The language of the two columns, if it isn't the app's: "en" for a Danish app shown to an English studio. */
@@ -24,18 +25,22 @@ interface StageProps {
   children: ReactNode;
 }
 
-export function Stage({ story, controls, lang, statusTime, children }: StageProps) {
+export function Stage({ controls, lang, statusTime, children }: StageProps) {
   return (
-    <div className="min-h-dvh bg-background lg:grid lg:h-dvh lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:grid-rows-[minmax(0,1fr)] lg:items-center lg:gap-10 lg:overflow-hidden lg:px-8 xl:gap-16 xl:px-14">
-      {/* Each side scrolls on its own on a short screen, so the phone always stays whole and centred. */}
-      <aside data-stage lang={lang} aria-label="The idea" className="hidden h-dvh justify-self-end overflow-y-auto lg:flex lg:max-w-[24rem] lg:flex-col lg:py-8">
-        <div className="my-auto">{story}</div>
-      </aside>
-      <Device statusTime={statusTime}>{children}</Device>
-      <aside data-stage lang={lang} aria-label="Situations" className="hidden h-dvh justify-self-start overflow-y-auto lg:flex lg:max-w-[20rem] lg:flex-col lg:px-3 lg:py-8">
-        <div className="my-auto">{controls}</div>
-      </aside>
-    </div>
+    <OnStage value={true}>
+      <div className="min-h-dvh bg-background lg:grid lg:h-dvh lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:grid-rows-[minmax(0,1fr)] lg:items-center lg:gap-10 lg:overflow-hidden lg:px-8 xl:gap-16 xl:px-14">
+        {/* Each side scrolls on its own on a short screen, so the phone always stays whole and centred. */}
+        <aside data-beside lang={lang} aria-label="Open it on your phone" className="hidden h-dvh justify-self-end overflow-y-auto lg:flex lg:flex-col lg:py-8">
+          <div className="my-auto">
+            <OpenOnPhone title="Try it on your phone" large />
+          </div>
+        </aside>
+        <Device statusTime={statusTime}>{children}</Device>
+        <aside data-beside lang={lang} aria-label="Situations" className="hidden h-dvh justify-self-start overflow-y-auto lg:flex lg:max-w-[20rem] lg:flex-col lg:px-3 lg:py-8">
+          <div className="my-auto">{controls}</div>
+        </aside>
+      </div>
+    </OnStage>
   );
 }
 
@@ -95,50 +100,6 @@ function useClock() {
     return () => window.clearInterval(id);
   }, []);
   return now;
-}
-
-/**
- * The left column: the stage's hero. A small line saying what this is, the headline (the person's question or
- * the client's promise, not the app's name), one short paragraph, two or three points, and the live link.
- */
-export function StageStory({ kicker, title, lead, children }: { kicker: string; title: ReactNode; lead: ReactNode; children?: ReactNode }) {
-  return (
-    <div className="flex flex-col gap-9">
-      <div className="flex flex-col gap-5">
-        <p className="font-mono text-label text-muted uppercase">{kicker}</p>
-        <h2 className="text-hero font-semibold">{title}</h2>
-        <p className="text-[17px] leading-relaxed text-muted">{lead}</p>
-      </div>
-      {children ? <ol className="flex flex-col gap-5">{children}</ol> : null}
-      <OpenOnPhone />
-    </div>
-  );
-}
-
-export function StoryPoint({ n, title, children }: { n: string; title: string; children: ReactNode }) {
-  return (
-    <li className="grid grid-cols-[2.25rem_1fr] gap-x-2">
-      <span className="font-mono text-[13px] leading-6 text-muted">{n}</span>
-      <span className="flex flex-col gap-1">
-        <span className="text-[16px] font-semibold">{title}</span>
-        <span className="text-[15px] leading-snug text-muted">{children}</span>
-      </span>
-    </li>
-  );
-}
-
-/** The live link, so a reviewer can open the app on their own phone. Hidden until APP.liveUrl is set. */
-function OpenOnPhone() {
-  if (!APP.liveUrl) return null;
-  return (
-    <p className="flex flex-col gap-0.5 text-[14px]">
-      <span className="font-medium">Open it on your phone</span>
-      <a href={APP.liveUrl} className="text-muted underline-offset-4 hover:underline">
-        {APP.liveUrl.replace("https://", "")}
-      </a>
-      <span className="text-muted">Add to Home Screen to install it.</span>
-    </p>
-  );
 }
 
 /** The right column: every situation as a button; the chosen one's note says what the person sees and can do. */

@@ -63,7 +63,6 @@ export default function Kit() {
             Type
           </h2>
           <div className="flex flex-col gap-5">
-            <p className="text-hero font-semibold">Hero, the stage</p>
             <p className="text-display font-semibold">Display, the answer</p>
             <p className="font-mono text-label text-muted uppercase">Label, text-label</p>
             <p className="text-3xl font-semibold tracking-tight">Heading, text-3xl</p>

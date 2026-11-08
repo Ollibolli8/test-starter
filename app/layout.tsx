@@ -22,18 +22,16 @@ export const metadata: Metadata = {
   title: APP.name,
   description: APP.description,
   applicationName: APP.name,
-  // Opens full screen from the home screen, with the status bar over the app (it draws under the notch itself).
-  appleWebApp: { capable: true, title: APP.shortName, statusBarStyle: "default" },
+  // Opens full screen from the home screen, under a black status bar (the app is dark only).
+  appleWebApp: { capable: true, title: APP.shortName, statusBarStyle: "black" },
   formatDetection: { telephone: false },
 };
 
 export const viewport: Viewport = {
   // So the app can run under the notch and above the home bar (env(safe-area-inset-*), --app-top / --app-bottom).
   viewportFit: "cover",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: APP.colour.light },
-    { media: "(prefers-color-scheme: dark)", color: APP.colour.dark },
-  ],
+  themeColor: APP.colour,
+  colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
