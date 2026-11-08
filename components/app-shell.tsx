@@ -36,7 +36,9 @@ export function AppShell({ header, bar, overlay, children }: AppShellProps) {
   }, []);
 
   return (
-    <div ref={shell} className="relative isolate flex h-full flex-col overflow-hidden bg-background">
+    // A size container, so the app lays itself out by the room it has (a phone, the stage's phone, a desktop window)
+    // with `@5xl:` classes, never by the window's width.
+    <div ref={shell} className="@container relative isolate flex h-full flex-col overflow-hidden bg-background">
       {header ? (
         <header data-behind-sheet className="relative z-10 shrink-0 px-5 pt-[calc(var(--app-top,0px)+0.75rem)] pb-2">
           {header}

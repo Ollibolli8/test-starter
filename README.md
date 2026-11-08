@@ -11,7 +11,7 @@ In the Claude app's **Code** tab, start a session on the Mac's **Developer** fol
 2. writes the brief into `BRIEF.md`, and the start time and milestones into `HANDOFF.md`,
 3. puts it on Vercel when you say yes (every push to `main` updates the live link),
 4. finds out who uses it (ten minutes of desk research into the person and their moment, with sources) and writes it below under "Who uses it and how they feel", starts "Choices from the person" (each choice and what it ruled out, traced to a fact about them), and writes the facts of the world it lives in (how the data arrives, the rules, the money, the formats) under "The details that work",
-5. plans the build with you from that: questions for the client, the core flow, what's left out, and two or three looks in a line each for you to pick from; then builds the first version whole, dark only: the app at the live link, and the presentation at `/stage` (AGENTS.md → The first version is the product), and walks it as the person in every situation before showing you (AGENTS.md → The details work),
+5. plans the build with you from that: questions for the client, the core flow, what's left out, and two or three looks in a line each for you to pick from; then builds the first version whole, dark only: the app at the live link (a phone first, laid out for a desktop too), and the presentation at `/stage` (AGENTS.md → The first version is the product), and walks it as the person in every situation before showing you (AGENTS.md → The details work),
 6. near the end, puts your design into Figma as editable layers for the designer, linked from the README.
 
 Without the command, do it by hand: on GitHub press **Use this template** (private), then tell Claude *"Clone github.com/Ollibolli8/NAME into ~/Developer/NAME. Work only in that folder: read its CLAUDE.md, AGENTS.md and HANDOFF.md first, then run npm ci and npm run dev."* Then on vercel.com: **Add New…** → **Project** → the repo → **Deploy**.
@@ -80,6 +80,12 @@ One sentence: what it is and who it is for.
 ## Not built, and why
 
 <!-- At least two things left out on purpose, and why that's right for this person (til- og fravalg). What I ran out of time for goes under "What I'd do next" instead. -->
+
+## Presenting it
+
+<!-- The order for the presentation, person first: 1. who it's for in half a minute (the moment, three facts, what each
+     changed, and how the client's own data would check them: support tickets, addresses, usage); 2. the app on /stage,
+     the situations that show the details; 3. the desktop at /; 4. what I'd need and what's next. -->
 
 ## Ten-second test
 
