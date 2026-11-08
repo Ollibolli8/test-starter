@@ -36,6 +36,17 @@ Olle should never have to iterate a dull first version into a good one. The firs
 - **Built whole the first time:** every situation (loading, empty, error, offline, stale, the brief's own edge cases) in the same look, at 390 px, at `/` on a desktop and on `/stage`, with reduced motion and the keyboard.
 - **Look at it before showing it.** Screenshots at 390 px and 1440 px (`/` and `/stage`) in every situation, and one with the system in light mode to see it stays dark. Fix what a studio would notice first (the list at the end of the craft skill) before telling Olle it's ready. Then read every situation's words as the person would: no line may contradict another ("start it now" over "wait for tonight"), and the advice must still be right when the data is late or missing.
 
+### The details work
+
+A creative developer is judged on more than how fast something good-looking appears: that it's the right thing for this person at this moment, that it fits the reality it lives in, and that the small things work. An agent tends to stop once the screen looks done, so this is a list and a pass, not a hope.
+
+- **The reality it lives in, before code.** With the brief's five lines, start README → The details that work: the facts the app has to respect, each from the brief or desk research, never guessed. How and when the data really arrives; the rules of the thing itself (a machine's timer that counts whole hours, prices published at 13.00, a day of 92 or 100 quarters when the clocks change); the money (fees, VAT, rounding, how it's billed); the place (Danish formats: "1,84 kr", "21.15", "3 t 10 min"); the hand and the moment. Each fact becomes a rule in `lib/` with a test, a situation (`lib/situations.ts`), or a line in the UI. A fact that is none of them isn't handled.
+- **Rules at their edges.** Each rule's test covers its boundaries, not just a normal day: now, midnight, the last known value, the clock change, zero, below zero, a tie, the largest value the feed allows.
+- **Time keeps moving.** The answer stays right while the app is open (it moves on at the next step: a quarter, a minute) and when it's opened again from the home screen the next morning (it re-reads on return to the tab). "Now" is the device's clock; the time zone is the brief's (Europe/Copenhagen), never the server's.
+- **Every control, every state.** Pressed, focused, disabled and busy; a second tap while busy does nothing twice; Back and Escape go where the person expects; nothing jumps when data arrives (keep its space); a choice the person made is remembered, and a second tab agrees.
+- **A detail worth showing gets its own situation**, named after the moment ("Clock change night", "Price below zero", "Opened at 23.50"), so in the presentation it's one click away on `/stage` and the app proves it, not a slide.
+- **The details pass**, after the screenshots in "Look at it before showing it", and again once features stop (about 20 minutes of a 3-hour test; fewer features finished whole beat more): start from the brief, not the code. As the person, in their moment, at 390 px with one thumb, do the core task once in every situation and ask on each screen: is this still the right thing to tell them now, would they act on it, and is any word, number or control wrong for them? Fix what fails, and finish its line in README → The details that work: the fact → what the app does → where to see it. If Olle has turned on a reviewer agent, give it the brief and the live link, not the code.
+
 ### Stack (fixed)
 
 - Next.js App Router, TypeScript in strict mode (with `noUncheckedIndexedAccess`), Tailwind CSS, Motion (`motion/react`), Lenis.
@@ -95,3 +106,4 @@ Design and build loading, empty, error, offline and stale-data states for every 
 3. `npm run check` green, and the live link opens without a login.
 4. Checked at 390 px and on desktop, with the keyboard, and with reduced motion on.
 5. A ten-second test with someone who hasn't seen it: what they said it was and what they'd do, written in README → Ten-second test.
+6. The details pass done (The details work), and the presentation follows the README: the brief (who, when, understand, feel, do), the app on `/stage`, two or three of the details that work (each shown in its situation and said as the person's moment: what would go wrong for them without it), what's not built and why, and what you'd test next.

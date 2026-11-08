@@ -10,8 +10,8 @@ In the Claude app's **Code** tab, start a session on the Mac's **Developer** fol
 1. makes a private repo from this starter, clones it into `~/Developer/NAME`, installs it and starts it on http://localhost:3200,
 2. writes the brief into `BRIEF.md`, and the start time and milestones into `HANDOFF.md`,
 3. puts it on Vercel when you say yes (every push to `main` updates the live link),
-4. finds out who uses it (ten minutes of desk research into the moment of use) and writes it below under "Who uses it and how they feel",
-5. plans the build with you from that: questions for the client, the core flow, what's left out, and two or three looks in a line each for you to pick from; then builds the first version whole, dark only: the app at the live link, and the presentation at `/stage` (AGENTS.md → The first version is the product),
+4. finds out who uses it (ten minutes of desk research into the moment of use) and writes it below under "Who uses it and how they feel", and the facts of the world it lives in (how the data arrives, the rules, the money, the formats) under "The details that work",
+5. plans the build with you from that: questions for the client, the core flow, what's left out, and two or three looks in a line each for you to pick from; then builds the first version whole, dark only: the app at the live link, and the presentation at `/stage` (AGENTS.md → The first version is the product), and walks it as the person in every situation before showing you (AGENTS.md → The details work),
 6. near the end, puts your design into Figma as editable layers for the designer, linked from the README.
 
 Without the command, do it by hand: on GitHub press **Use this template** (private), then tell Claude *"Clone github.com/Ollibolli8/NAME into ~/Developer/NAME. Work only in that folder: read its CLAUDE.md, AGENTS.md and HANDOFF.md first, then run npm ci and npm run dev."* Then on vercel.com: **Add New…** → **Project** → the repo → **Deploy**.
@@ -48,6 +48,13 @@ One sentence: what it is and who it is for.
 - **Motion:** <!-- what moves, because …, and what happens with reduced motion on -->
 - **Layout:** <!-- -->
 - **Numbers:** <!-- every number has a unit, a comparison and a verdict ("1,84 kr/kWh · 40 % under nu · billigt"); one number per thing, never two that disagree -->
+
+## The details that work
+
+<!-- The reality it lives in, and what the app does about it. Start it with the brief (the facts, from the brief or
+     desk research), finish each line as it's built. One line each: the fact → what the app does → where to see it
+     (a situation on /stage, or a test). Keep the three to six that matter most to the person; the presentation shows them.
+     e.g. "Delay timers count whole hours → it only suggests starts the machine can be set to → situation Evening, plan.test.ts" -->
 
 ## Assumptions
 
