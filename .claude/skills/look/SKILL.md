@@ -33,6 +33,7 @@ Strike every seed that fails one of these:
 3. Does the core task still take one glance and one thumb?
 4. Is the tie real (the meter really counts the run; a receipt really is what it costs), not a costume? And is it the thing they see today, or a memory? A memory can work (most people still picture the meter as drums, though Danish homes went digital by 2020), but choose it knowingly and say so on the board.
 5. Can it be built whole in the time, in this stack, with a still version?
+6. Is it used where it sits in its real sequence? A form from the world brings its moment with it: a receipt is printed after you pay, a ticket before the trip, a forecast before the day. So the receipt confirms a choice the person has made (it prints when they pick the start); it is not the first thing they see.
 
 ## 3. Three first screens (10–15 minutes)
 
@@ -40,11 +41,11 @@ Pick three survivors on a ladder, different in form and in how they're touched, 
 
 - **Crafted:** a familiar pattern done better than anyone in the trade does it, with one quiet signature. The one a client could never call risky.
 - **Bold:** one strong idea from outside apps that carries the answer.
-- **Wild:** the furthest seed that still passes all five questions.
+- **Wild:** the furthest seed that still passes all six questions.
 
-Build each as the real first screen, not a moodboard: `app/looks/<id>.tsx`, in its own type and colours (dark), the brief's real words in its language, real numbers from the simulated source or the brief, the answer in display type, and the motion moment if it's cheap. Put the three on `app/looks/page.tsx` (`components/look-board.tsx`): side by side in phones, each with its rung, its name and four short lines: the idea, how it's touched, the fact about the person it answers, and what it risks. Look at `/looks` at 1440 px and at one look at 390 px before showing it.
+Build each as the real first screen, not a moodboard, with its form at its moment (if it comes after a choice, the screen is the choice and the form arrives when it's made): `app/looks/<id>.tsx`, in its own type and colours (dark), the brief's real words in its language, real numbers from the simulated source or the brief, the answer in display type, and the motion moment if it's cheap. Put the three on `app/looks/page.tsx` (`components/look-board.tsx`): side by side in phones, each with its rung, its name and four short lines: the idea, how it's touched, the fact about the person it answers, and what it risks. Look at `/looks` at 1440 px and at one look at 390 px before showing it.
 
-Recommend one in a sentence, with what it risks and how the build will guard against it. Bold is usually the answer; when Crafted is, say why. Name what the recommended form costs the task, too: one big object usually hides the overview (the whole night at a glance), so the build gives that back somewhere plain, in the sheet or on the desktop.
+Recommend one in a sentence, with what it risks and how the build will guard against it. The rungs are a range, not a ranking: recommend the one that fits this person best, which is often the Crafted one done with real care. Name what the recommended form costs the task, too: one big object usually hides the overview (the whole night at a glance), so the build gives that back somewhere plain, in the sheet or on the desktop.
 
 ## 4. Olle picks, then it's built whole
 
