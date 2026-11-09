@@ -31,7 +31,7 @@ Strike every seed that fails one of these:
 1. Once seen, does it feel obvious for this client and this person?
 2. Has nobody in the trade done it (step 1)?
 3. Does the core task still take one glance and one thumb?
-4. Is the tie real (the meter really counts the run; a receipt really is what it costs), not a costume?
+4. Is the tie real (the meter really counts the run; a receipt really is what it costs), not a costume? And is it the thing they see today, or a memory? A memory can work (most people still picture the meter as drums, though Danish homes went digital by 2020), but choose it knowingly and say so on the board.
 5. Can it be built whole in the time, in this stack, with a still version?
 
 ## 3. Three first screens (10–15 minutes)
@@ -44,7 +44,7 @@ Pick three survivors on a ladder, different in form and in how they're touched, 
 
 Build each as the real first screen, not a moodboard: `app/looks/<id>.tsx`, in its own type and colours (dark), the brief's real words in its language, real numbers from the simulated source or the brief, the answer in display type, and the motion moment if it's cheap. Put the three on `app/looks/page.tsx` (`components/look-board.tsx`): side by side in phones, each with its rung, its name and four short lines: the idea, how it's touched, the fact about the person it answers, and what it risks. Look at `/looks` at 1440 px and at one look at 390 px before showing it.
 
-Recommend one in a sentence, with what it risks and how the build will guard against it. Bold is usually the answer; when Crafted is, say why.
+Recommend one in a sentence, with what it risks and how the build will guard against it. Bold is usually the answer; when Crafted is, say why. Name what the recommended form costs the task, too: one big object usually hides the overview (the whole night at a glance), so the build gives that back somewhere plain, in the sheet or on the desktop.
 
 ## 4. Olle picks, then it's built whole
 
