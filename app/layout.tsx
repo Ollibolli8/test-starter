@@ -34,9 +34,17 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
+// In a drawn phone on the case page (app/case, components/case/live.tsx) the app is opened with ?frame=phone. This
+// marks the page before its first paint, so the app keeps clear of the drawn notch and home bar from the start
+// (globals.css → [data-frame]). suppressHydrationWarning on <html>: the mark is set here, not by React.
+const FRAME = `if(/[?&]frame=phone(&|$)/.test(location.search))document.documentElement.dataset.frame="phone"`;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang={APP.lang} className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang={APP.lang} className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: FRAME }} />
+      </head>
       {/* min-h-svh, not h-full: Lenis sets html and body to height:auto. */}
       <body className="flex min-h-svh flex-col bg-background font-sans text-foreground">
         {/* Without JavaScript nothing animates in, so show everything that would have. */}

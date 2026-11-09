@@ -147,6 +147,13 @@
   }
 }
 
+/* The app in a drawn phone on the case page (?frame=phone, app/layout.tsx): clear of the drawn status bar and island
+   and above the drawn home bar, the same insets the stage's phone gives (components/phone.tsx). */
+[data-frame="phone"] {
+  --frame-top: 3.25rem;
+  --frame-bottom: 1.75rem;
+}
+
 /* The looks board's phones (components/look-board.tsx), each 414 × 868 drawn at its real size and zoomed (zoom, not
    scale, so the captions under it wrap to its width): on a phone, as wide as the screen; on a desktop, three across,
    as large as the window's width allows and short enough to see whole under the board's title. */

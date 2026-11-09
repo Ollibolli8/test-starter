@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactLenis, type LenisRef } from "lenis/react";
+import { usePathname } from "next/navigation";
 import { cancelFrame, frame, useReducedMotion } from "motion/react";
 import { useEffect, useRef, type ReactNode } from "react";
 
@@ -18,7 +19,10 @@ export const SMOOTH_SCROLL = true;
  */
 export function SmoothScroll({ children }: { children: ReactNode }) {
   const reduce = useReducedMotion();
-  const enabled = SMOOTH_SCROLL && !reduce;
+  // Not on the case page: it's mostly live app frames (components/case/live.tsx), which take the wheel themselves,
+  // and native scroll keeps the page and the frames in step.
+  const onCase = usePathname().startsWith("/case");
+  const enabled = SMOOTH_SCROLL && !reduce && !onCase;
   const lenis = useRef<LenisRef>(null);
 
   useEffect(() => {

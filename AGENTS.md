@@ -50,6 +50,18 @@ A creative developer is judged on more than how fast something good-looking appe
 - **A detail worth showing gets its own situation**, named after the moment ("Clock change night", "Price below zero", "Opened at 23.50"), so in the presentation it's one click away on `/stage` and the app proves it, not a slide.
 - **The details pass**, after the screenshots in "Look at it before showing it", and again once features stop (about 20 minutes of a 3-hour test; fewer features finished whole beat more): start from the brief, not the code. As the person, in their moment, at 390 px with one thumb, do the core task once in every situation and ask on each screen: is this still the right thing to tell them now, would they act on it, and is any word, number or control wrong for them? Fix what fails, finish its line in README → The details that work (the fact → what the app does → where to see it), and check that every row of README → Choices from the person is still true on screen. If Olle has turned on a reviewer agent, give it the brief and the live link, not the code.
 
+### The case page
+
+`/case` (`app/case/page.tsx`, noindex) shows the product the way a studio shows its own work: a scroll-through brand case with the app running inside it. It is the frame around the product, never in its place, so it comes last: after the details pass, about 20–30 minutes, filled rather than designed.
+
+- **Filled from the README.** The blocks are in `components/case/` (title, hero, facts, identity, statement, screens, details, components, desktop, credits); every word and pick is in `app/case/content.tsx`. The brief and the person give the facts and the statement, Design choices the identity, The details that work the details. The look is the app's own tokens and type, so the case is the brand, not a second design.
+- **The app live, never a screenshot.** Every phone and browser on it is the real app at `/?s=<situation>` (`components/case/live.tsx`): a reviewer on a laptop taps it right there, a tap on a phone opens that screen full size. The hero is the first screen; Screens are three or four situations that show the range; each detail stands beside its situation (the fact, what the app does, where it's tested), and the motion moment gets "Play it again". Keep the situations in a plain module, not a `"use client"` file, so the case can read them (`app/example-situations.ts`).
+- **The real components.** The Components section shows the app's own pieces in the state that shows them best (`app/case/parts.tsx`, exported from the app); never redraw one for the case.
+- **Colour from the build.** The palette reads `app/globals.css` and prints each colour's hex, token and contrast; name the colours in the brand's words.
+- **Numbers are counts, never results:** situations, tests, taps to the answer. Nothing about users, savings or reach.
+- **Scaled to the brief.** A brand or concept brief gets the whole case. A feature for a client's existing product keeps the title, hero, facts, screens, details and credits, and drops Identity and Components (their brand isn't ours to present): delete sections in `app/case/page.tsx`, the numbers follow.
+- In the studio's language while the app keeps the person's, checked at 390 px and 1440 px and with reduced motion. `/stage` stays what Olle presents from; `/case` is what the studio reads afterwards, linked from README → Live.
+
 ### Stack (fixed)
 
 - Next.js App Router, TypeScript in strict mode (with `noUncheckedIndexedAccess`), Tailwind CSS, Motion (`motion/react`), Lenis.
@@ -78,7 +90,8 @@ A creative developer is judged on more than how fast something good-looking appe
 
 ### Examples to keep or delete
 
-- `app/example-app.tsx` shows the app pieces working together at `/` and on `/stage` (app page, stage, app shell, glass bar, sheet, situations, a count-up). Build the brief's app in its place and delete it.
+- `app/example-app.tsx` shows the app pieces working together at `/` and on `/stage` (app page, stage, app shell, glass bar, sheet, situations, a count-up). Build the brief's app in its place and delete it, with `app/example-situations.ts` once the brief's situations have their own plain module.
+- `app/case/` is the case page with the example app in it (The case page): keep the page, refill `content.tsx` and `parts.tsx` for the brief.
 - `app/looks/` holds three placeholder looks on the looks board (`components/look-board.tsx`). Replace them with the brief's three (the look skill) and keep the page: it stays at hand-in, noindex.
 - `app/kit/` is the tokens page: every colour, type size, control and motion on one page. Tune the tokens there first. Delete it before hand-in unless it is kept on purpose as the design system page.
 - `lib/cart/` is a typed basket (prices in whole øre, saved in the browser, in step across tabs). For a shop brief, wrap the app in `<CartProvider>` in `components/providers.tsx` and use `useCart()`. Otherwise delete the folder and the kit's basket.
@@ -110,4 +123,5 @@ Design and build loading, empty, error, offline and stale-data states for every 
 3. `npm run check` green, and the live link opens without a login.
 4. Checked at 390 px and on desktop, with the keyboard, and with reduced motion on.
 5. A ten-second test with someone who hasn't seen it: what they said it was and what they'd do, written in README → Ten-second test.
-6. The details pass done (The details work), and the presentation follows the README: the brief (who, when, understand, feel, do), the app on `/stage`, two or three of the details that work (each shown in its situation and said as the person's moment: what would go wrong for them without it), what's not built and why, and what you'd test next.
+6. `/case` filled for the brief (The case page), with no example words or parts left, at 390 px and 1440 px.
+7. The details pass done (The details work), and the presentation follows the README: the brief (who, when, understand, feel, do), the app on `/stage`, two or three of the details that work (each shown in its situation and said as the person's moment: what would go wrong for them without it), what's not built and why, and what you'd test next.

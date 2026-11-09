@@ -13,37 +13,8 @@ import { Segmented } from "@/components/segmented";
 import { Sheet } from "@/components/sheet";
 import { useOnStage } from "@/components/on-stage";
 import { SituationList, Stage } from "@/components/stage";
-import { useSituation, type Situation } from "@/lib/situations";
-
-type SituationId = "ready" | "loading" | "empty" | "error" | "offline";
-
-const situations: readonly Situation<SituationId>[] = [
-  {
-    id: "ready",
-    label: "Ready",
-    note: "The answer, as the person sees it most days.",
-  },
-  {
-    id: "loading",
-    label: "Loading",
-    note: "The frame is there at once; the answer fills in.",
-  },
-  {
-    id: "empty",
-    label: "Nothing yet",
-    note: "Says when there will be something, and what to do meanwhile.",
-  },
-  {
-    id: "error",
-    label: "Can't load",
-    note: "Says what failed in plain words, with one way to try again.",
-  },
-  {
-    id: "offline",
-    label: "Offline, old data",
-    note: "Shows the last answer and how old it is.",
-  },
-];
+import { useSituation } from "@/lib/situations";
+import { situations, type SituationId } from "./example-situations";
 
 type Tab = "first" | "second";
 
