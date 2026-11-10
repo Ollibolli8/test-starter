@@ -86,6 +86,8 @@ export function CasePage({ lang, children }: { lang: string; children: ReactNode
 const LINKS = [
   { href: "/", label: "The app" },
   { href: "/stage", label: "Stage" },
+  // From a tablet up: four links don't fit beside the name on a phone, where the credits' links carry it.
+  { href: "/states", label: "States", wide: true },
   { href: "/looks", label: "Looks" },
 ] as const;
 
@@ -102,7 +104,7 @@ export function CaseHeader() {
           <Link
             key={l.href}
             href={l.href}
-            className="flex min-h-11 items-center rounded-lg px-3 text-muted transition-colors duration-150 ease-out-soft hover:text-foreground"
+            className={`min-h-11 items-center rounded-lg px-3 text-muted transition-colors duration-150 ease-out-soft hover:text-foreground ${"wide" in l ? "hidden sm:flex" : "flex"}`}
           >
             {l.label}
           </Link>

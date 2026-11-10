@@ -11,7 +11,7 @@ In the Claude app's **Code** tab, start a session on the Mac's **Developer** fol
 2. writes the brief into `BRIEF.md`, and the start time and milestones into `HANDOFF.md`,
 3. puts it on Vercel when you say yes (every push to `main` updates the live link),
 4. finds out who uses it (fifteen minutes of desk research into the person and their moment, with sources and at least one primary signal such as app reviews) and writes it below under "Who uses it and how they feel", starts "Choices from the person" (each choice and what it ruled out, traced to a fact about them), and writes the facts of the world it lives in (how the data arrives, the rules, the money, the formats) under "The details that work",
-5. plans the build with you from that: questions for the client, the core flow and what's left out; then finds the look (about 20 minutes: what everyone in the trade does is ruled out, ten ideas from outside apps, and three built as real phone screens from safe to wild, side by side at http://localhost:3200/looks for you to pick from); then builds the first version whole, in the client's brand when the brief gives one, otherwise dark: the app at the live link (a phone first, laid out for a desktop too), and the presentation at `/stage` (AGENTS.md → The first version is the product), and walks it as the person in every situation before showing you (AGENTS.md → The details work),
+5. plans the build with you from that: questions for the client, the core flow and what's left out; then finds the look (about 20 minutes: what everyone in the trade does is ruled out, ten ideas from outside apps, and three built as real phone screens from safe to wild, side by side at http://localhost:3200/looks for you to pick from); then builds the first version whole, in the client's brand when the brief gives one, otherwise dark: the app at the live link (a phone first, laid out for a desktop too), the presentation at `/stage` and every situation side by side at `/states` (AGENTS.md → The first version is the product), and walks it as the person in every situation before showing you (AGENTS.md → The details work),
 6. near the end, after that walk, fills the case page at `/case` from this README: the app shown the way a studio shows a brand case, with the app running live in phones and a browser between its logo, type, colours, details and components (AGENTS.md → The case page),
 7. puts your design into Figma as editable layers for the designer, linked from the README.
 
@@ -23,7 +23,7 @@ Whichever way you start, the five lines under **The brief** come first, then you
 
 One sentence: what it is and who it is for.
 
-**Live:** <!-- https://….vercel.app (opens without a login): the app. The presentation: https://….vercel.app/stage. The case: https://….vercel.app/case -->
+**Live:** <!-- https://….vercel.app (opens without a login): the app. The presentation: https://….vercel.app/stage. Every state: https://….vercel.app/states. The case: https://….vercel.app/case -->
 
 ## The brief
 
@@ -89,7 +89,7 @@ One sentence: what it is and who it is for.
      changed, and how the client's own data would check them: support tickets, addresses, usage), then one sentence for
      every row of Choices from the person, to be said aloud: "Cheap and dear differ by height, not just colour, because
      5–8 % of Danish men can't tell this green from this orange."; 2. the three looks at /looks, what the trade does and
-     why this one; 3. the app on /stage, the situations that show the details; 4. the desktop at /; 5. what I'd need and
+     why this one; 3. the app on /stage, the situations that show the details, then every state at once on /states; 4. the desktop at /; 5. what I'd need and
      what's next. Afterwards the studio gets /case to read in their own time. -->
 
 ## Ten-second test
