@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 /* Design tokens. Set these from the brief first (the person, the moment, the client's own world), then look at /kit.
-   Dark only, always (Olle, 8 November): one theme, designed for dark, whatever the brief. Find the brief's own reason
-   for it and write it in README → Design choices → Colour (Strømpris: on an OLED screen a black pixel is off, so an
-   app about saving power spends less of it).
+   One theme (Olle, 10 November): the client's brand when the brief hands one over, light or dark, carried as given;
+   otherwise dark, as these defaults are, with the brief's own reason in README → Design choices → Colour (Strømpris:
+   on an OLED screen a black pixel is off, so an app about saving power spends less of it). color-scheme below must
+   match APP.scheme in lib/app.ts (lib/theme.test.ts checks it).
    Text pairs pass 4.5:1: foreground ~17:1, muted ~7.8:1 on the background and ~7:1 on raised.
    accent starts as the foreground, so nothing is coloured until the brief gives a reason. */
 :root {
@@ -27,6 +28,10 @@
   --glass-edge: rgb(255 255 255 / 0.08);
   --glass-line: rgb(255 255 255 / 0.06);
   --glass-shadow: rgb(0 0 0 / 0.5);
+  /* A light theme swaps the six glass values above for a light set made from its own background, e.g. on #f4f1ea:
+     --glass-tint: rgb(244 241 234 / 0.55); --glass-tint-strong: rgb(244 241 234 / 0.86);
+     --glass-light: rgb(255 255 255 / 0.7); --glass-edge: rgb(0 0 0 / 0.08); --glass-line: rgb(0 0 0 / 0.06);
+     --glass-shadow: rgb(0 0 0 / 0.12). */
 }
 
 @theme inline {

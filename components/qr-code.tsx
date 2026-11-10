@@ -4,11 +4,11 @@
 
 export const QR = { size: 0, path: "" };
 
-/** The code, dark on white so every phone camera reads it on the dark page. Nothing until QR is filled in. */
+/** The code, dark on white so every phone camera reads it, on a dark page or a light one. Nothing until QR is filled in. */
 export function QrTile({ className, label }: { className?: string; label: string }) {
   if (!QR.path) return null;
   return (
-    <span className="shrink-0 rounded-xl bg-white p-2.5 text-[#0a0a0a] shadow-[0_0_0_1px_rgb(255_255_255/0.08)]">
+    <span className="shrink-0 rounded-xl bg-white p-2.5 text-[#0a0a0a] ring-1 ring-foreground/10">
       <svg viewBox={`4 4 ${QR.size} ${QR.size}`} shapeRendering="crispEdges" className={className} role="img" aria-label={label}>
         <path stroke="currentColor" d={QR.path} />
       </svg>

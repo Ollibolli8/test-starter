@@ -8,7 +8,10 @@ export const APP = {
   description: "Starting point for a timed client test.",
   /** The interface's language, also set on <html lang>: "da" for a Danish interface. */
   lang: "en",
-  /** The app's background (dark only, app/globals.css): the phone's browser bars, the install splash, the icon. */
+  /** "dark" unless the brief hands over a light brand (AGENTS.md → One theme). Sets the color-scheme meta, the
+   *  home-screen status bar and the case page's live phones; app/globals.css's color-scheme must match. */
+  scheme: "dark" as "dark" | "light",
+  /** The app's background (--background in app/globals.css): the phone's browser bars, the install splash, the icon. */
   colour: "#0a0a0a",
   /** The live link once it's on Vercel; shown beside the app on a desktop and on /stage as "open it on your phone". */
   liveUrl: "" as string,

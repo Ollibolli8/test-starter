@@ -166,7 +166,7 @@ function Live({ src, open, title, eager = false }: { src: string; open: string; 
           ref={frame}
           src={src}
           title={`${title} (live)`}
-          className={`absolute inset-0 size-full border-0 [color-scheme:dark] transition-opacity duration-300 ease-out-soft pointer-coarse:pointer-events-none ${ready ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 size-full border-0 ${APP.scheme === "light" ? "[color-scheme:light]" : "[color-scheme:dark]"} transition-opacity duration-300 ease-out-soft pointer-coarse:pointer-events-none ${ready ? "opacity-100" : "opacity-0"}`}
         />
       ) : null}
       <a href={open} aria-label={`Open “${title}” full screen`} className="absolute inset-0 hidden pointer-coarse:block" />

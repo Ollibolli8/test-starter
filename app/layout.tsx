@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   title: APP.name,
   description: APP.description,
   applicationName: APP.name,
-  // Opens full screen from the home screen, under a black status bar (the app is dark only).
-  appleWebApp: { capable: true, title: APP.shortName, statusBarStyle: "black" },
+  // Opens full screen from the home screen, under a status bar in the app's one theme (APP.scheme).
+  appleWebApp: { capable: true, title: APP.shortName, statusBarStyle: APP.scheme === "light" ? "default" : "black" },
   formatDetection: { telephone: false },
 };
 
@@ -31,7 +31,7 @@ export const viewport: Viewport = {
   // So the app can run under the notch and above the home bar (env(safe-area-inset-*), --app-top / --app-bottom).
   viewportFit: "cover",
   themeColor: APP.colour,
-  colorScheme: "dark",
+  colorScheme: APP.scheme,
 };
 
 // In a drawn phone on the case page (app/case, components/case/live.tsx) the app is opened with ?frame=phone. This
