@@ -33,7 +33,7 @@ export const CASE = {
     { label: "Role", value: "Idea, art direction and design, built with agentic coding" },
     { label: "Built with", value: "Next.js, TypeScript, Tailwind, Motion · Claude Code" },
   ],
-  /** Two short paragraphs: the problem in the client's words, then what this is and the one thing it does differently. */
+  /** Two short paragraphs: the client's problem (README → The client's problem: what it costs them today), then what this is and the one thing it does differently. */
   intro: [
     "The problem, in the client's own words from the brief, and who has it.",
     "What this is, and the one thing it does that the alternative doesn't.",

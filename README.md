@@ -10,7 +10,7 @@ In the Claude app's **Code** tab, start a session on the Mac's **Developer** fol
 1. makes a private repo from this starter, clones it into `~/Developer/NAME`, installs it and starts it on http://localhost:3200,
 2. writes the brief into `BRIEF.md`, and the start time and milestones into `HANDOFF.md`,
 3. puts it on Vercel when you say yes (every push to `main` updates the live link),
-4. finds out who uses it (fifteen minutes of desk research into the person and their moment, with sources and at least one primary signal such as app reviews) and writes it below under "Who uses it and how they feel", starts "Choices from the person" (each choice and what it ruled out, traced to a fact about them), and writes the facts of the world it lives in (how the data arrives, the rules, the money, the formats) under "The details that work",
+4. writes the client's problem in five lines under "The client's problem" (who pays and why now, what it costs them today, how they would see it worked, what limits them, who has to say yes), then finds out who uses it (fifteen minutes of desk research into the person and their moment, with sources and at least one primary signal such as app reviews) and writes it below under "Who uses it and how they feel", starts "Choices from the person" (each choice and what it ruled out, traced to a fact about them), and writes the facts of the world it lives in (how the data arrives, the rules, the money, the formats) under "The details that work",
 5. plans the build with you from that: questions for the client, the core flow and what's left out; then finds the look (about 20 minutes: what everyone in the trade does is ruled out, ten ideas from outside apps, and three built as real phone screens from safe to wild, side by side at http://localhost:3200/looks for you to pick from); then builds the first version whole, in the client's brand when the brief gives one, otherwise dark: the app at the live link (a phone first, laid out for a desktop too), the presentation at `/stage` and every situation side by side at `/states` (AGENTS.md → The first version is the product), and walks it as the person in every situation before showing you (AGENTS.md → The details work),
 6. near the end, after that walk, fills the case page at `/case` from this README: the app shown the way a studio shows a brand case, with the app running live in phones and a browser between its logo, type, colours, details and components (AGENTS.md → The case page),
 7. puts your design into Figma as editable layers for the designer, linked from the README.
@@ -36,11 +36,31 @@ One sentence: what it is and who it is for.
 - **Do:** <!-- the one thing they do next -->
 - **Unlike the alternative:** <!-- what this client does that others don't, and the one moment in the UI that proves it. That moment gets the motion; everything else stays calm. -->
 
+## The client's problem
+
+<!-- Written first, in about three minutes, from the brief's own background. The client's problem is the business's,
+     not the user's: the client pays for the work because something costs it money, time or trust today. Where the
+     brief is silent, look the client or its trade up and name the source, or mark the line as an assumption and
+     make it a question for the client. Never a cost or a result that is made up: the table's last column is how
+     they would measure it, not what happened. -->
+
+- **Who pays, and why now:** <!-- who at the client owns this, and what made them ask -->
+- **What it costs them today:** <!-- in something they already count: support contacts, payments sent back, customers leaving, hours -->
+- **How they would see it worked:** <!-- the number that would move, and where they would read it -->
+- **What limits them:** <!-- what the brief says isn't there (no back-end free, no real data, a deadline, a brand, a rule for the AI), and what the build does about each -->
+- **Who has to say yes:** <!-- compliance, legal, a board, the people on the phones, and what each needs to see -->
+
+| What it costs the client today | What the app does about it | How the client would see it worked |
+| --- | --- | --- |
+
+<!-- Two to four rows. Then one line where the client's problem and the person's moment pull apart (the client wants
+     fewer calls, the person wants a human), and which one the build follows. -->
+
 ## Who uses it and how they feel
 
 <!-- Written before any code. A short scenario of the moment (marked as assumptions), then at least five facts about
-     the PERSON, not the data, each with its source and what it makes the app do:
-     "- 8 % of Danish men can't tell red from green (source, date) → cheap and dear never differ by colour alone"
+     the PERSON, not the data, each with who says it (source and year, beside the number) and what it makes the app do:
+     "- 5–8 % of men are colour blind, mostly red-green (sundhed.dk, 2024) → cheap and dear never differ by colour alone"
      Then one line on how production would check them (five customers, support tickets, watch someone use it). -->
 
 ## Choices from the person
@@ -85,12 +105,14 @@ One sentence: what it is and who it is for.
 
 ## Presenting it
 
-<!-- The order for the presentation, person first: 1. who it's for in half a minute (the moment, three facts, what each
-     changed, and how the client's own data would check them: support tickets, addresses, usage), then one sentence for
-     every row of Choices from the person, to be said aloud: "Cheap and dear differ by height, not just colour, because
-     5–8 % of Danish men can't tell this green from this orange."; 2. the three looks at /looks, what the trade does and
-     why this one; 3. the app on /stage, the situations that show the details, then every state at once on /states; 4. the desktop at /; 5. what I'd need and
-     what's next. Afterwards the studio gets /case to read in their own time. -->
+<!-- The order for the presentation, the client first, then the person: 1. the client's problem in half a minute (what
+     it costs them today, what the app does about it, how they would see it worked); 2. who it's for in half a minute
+     (the moment, three facts, what each changed, and how the client's own data would check them: support tickets,
+     addresses, usage), then one sentence for every row of Choices from the person, to be said aloud with the source
+     named: "Cheap and dear differ by height, not just colour, because sundhed.dk puts colour blindness at 5–8 % of
+     men."; 3. the three looks at /looks, what the trade does and why this one; 4. the app on /stage, the situations
+     that show the details, then every state at once on /states; 5. the desktop at /; 6. what I'd need and what's
+     next. Afterwards the studio gets /case to read in their own time. -->
 
 ## Ten-second test
 
