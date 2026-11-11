@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { situations } from "../example-situations";
-import { Caption, CaseFacts, CaseHeader, CasePage, CaseTitle, Credits, Line, Pair, Stack, Tile } from "@/components/case/blocks";
-import { LiveBrowser, LivePhone } from "@/components/case/live";
+import { Caption, CaseFacts, CaseHeader, CasePage, CaseTitle, Foot, Line, Pair, Picture, Stack, Tile } from "@/components/case/blocks";
+import { LivePhone } from "@/components/case/live";
 import { APP } from "@/lib/app";
 
 // The case: the product shown the way a studio shows its work (AGENTS.md → The case page). Mostly pictures, and
-// every picture of the app is the app running in that situation. About a hundred words in all: the reasoning is in
+// every phone is the app running in that situation, and the laptop is two pictures taken from it. About a hundred words in all: the reasoning is in
 // the README and is said aloud. In the studio's language; the app inside keeps the person's.
 // This is the example app's case: replace every word and pick with the brief's.
 export const metadata: Metadata = {
@@ -111,19 +111,20 @@ export default function CasePageRoute() {
             </Tile>
           </Pair>
 
-          <Tile ground="ink" className="p-4 lg:p-14">
-            <LiveBrowser src="/" title={`${APP.name} on a laptop`} />
-          </Tile>
+          {/* The laptop as two pictures taken from the running app (scripts/case-pictures.plan.mjs): never a live
+              window with an address at the end of the case. */}
+          <Pair>
+            <Tile ground="ink" className="p-4 lg:p-10">
+              <Picture src="/case/laptop-1.webp" width={2880} height={1800} alt={`${APP.name} on a laptop: what the first screen does with the room.`} />
+            </Tile>
+            <Tile ground="ink" className="p-4 lg:p-10">
+              <Picture src="/case/laptop-2.webp" width={2880} height={1800} alt={`${APP.name} on a laptop, in a second situation.`} />
+            </Tile>
+          </Pair>
           <Caption>One line on what the laptop layout does with the room.</Caption>
         </Stack>
       </main>
-      <Credits
-        credits={[
-          { role: "Idea, art direction, design", name: "Oliver Kure Olsen" },
-          { role: "Built with agentic coding", name: "Claude Code" },
-        ]}
-        links={[{ label: "Open the app", href: "/" }]}
-      />
+      <Foot links={[{ label: "Open the app", href: "/" }]} />
     </CasePage>
   );
 }

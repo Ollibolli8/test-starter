@@ -1,11 +1,11 @@
 "use client";
 
-// The app, running, inside a drawn phone or browser on the case page (app/case): not a screenshot. Each frame is the
+// The app, running, inside a drawn phone on the case page (app/case): not a screenshot. Each frame is the
 // real app at its own address (/?s=<situation>), so every screen on the case is the product on its real data path,
 // and a reviewer on a laptop can tap it right there.
 //
 // How it behaves:
-// - Drawn at the device's real size (a 390 × 844 phone screen, a 1440 × 900 window) and scaled to the room it has,
+// - Drawn at the device's real size (a 390 × 844 phone screen) and scaled to the room it has,
 //   so the app lays itself out exactly as on that device. The scale is CSS only: tan(atan2(a, b)) is a / b.
 // - Loaded only near the screen and dropped again far from it, so a long case runs one or two apps at a time.
 //   Until it's live, the frame shows the app's launch screen (its background and icon).
@@ -55,50 +55,6 @@ export function LivePhone({ src, title, time, replay = false, eager = false }: L
         </button>
       ) : null}
     </div>
-  );
-}
-
-interface LiveBrowserProps {
-  /** The app's address: "/" for its desktop layout. */
-  src: string;
-  title: string;
-}
-
-/** The app in a desktop browser window, 1440 × 900, scaled to the column. */
-export function LiveBrowser({ src, title }: LiveBrowserProps) {
-  const host = APP.liveUrl ? APP.liveUrl.replace(/^https?:\/\//, "").replace(/\/$/, "") : undefined;
-  return (
-    <Scaled width={1440} height={944} className="w-full">
-      <div className="flex h-full flex-col overflow-hidden rounded-[18px] bg-raised shadow-[0_0_0_1.5px_var(--border),0_60px_120px_-40px_rgb(0_0_0/0.6)]">
-        <div aria-hidden="true" className="relative flex h-11 shrink-0 items-center gap-2 border-b border-border px-5">
-          {[0, 1, 2].map((i) => (
-            <span key={i} className="size-3 rounded-full bg-foreground/20" />
-          ))}
-          <span className="absolute left-1/2 flex h-7 w-[28rem] -translate-x-1/2 items-center justify-center rounded-lg bg-background/70 font-mono text-[13px] text-muted">
-            <Host fallback={host} path={src} />
-          </span>
-        </div>
-        <div className="relative min-h-0 flex-1">
-          <Live src={src} open={src} title={title} />
-        </div>
-      </div>
-    </Scaled>
-  );
-}
-
-/** The address bar: the live link's host once there is one, else the host the case is opened on. */
-function Host({ fallback, path }: { fallback?: string; path: string }) {
-  const [here, setHere] = useState(fallback ?? "");
-  useEffect(() => {
-    if (fallback) return;
-    const id = window.requestAnimationFrame(() => setHere(window.location.host));
-    return () => window.cancelAnimationFrame(id);
-  }, [fallback]);
-  return (
-    <>
-      {here}
-      {path === "/" ? "" : path}
-    </>
   );
 }
 

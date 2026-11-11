@@ -1,7 +1,7 @@
 // The case page's pieces (app/case/page.tsx). Pictures before words (Olle, 11 November, after Signifly's Sundhedskort
 // case): big tiles of the app on full-colour grounds, a pair of half tiles, one sentence in large type between
-// groups, and a line of small type where a picture needs it. The phones and the browser run the app
-// (components/case/live.tsx); nothing here is a screenshot.
+// groups, and a line of small type where a picture needs it. The phones run the app (components/case/live.tsx); the
+// laptop is shown as pictures taken from it.
 
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -106,19 +106,19 @@ export function CaseFacts({ facts, intro, stats }: { facts: readonly { label: st
   );
 }
 
-/** Who did what, and the link. */
-export function Credits({ credits, links }: { credits: readonly { role: string; name: string }[]; links: readonly { label: string; href: string }[] }) {
+/** A picture taken from the running app, in a thin rim so a pale screen reads on any ground. */
+export function Picture({ src, width, height, alt }: { src: string; width: number; height: number; alt: string }) {
   return (
-    <footer className="mt-16 flex flex-col gap-8 border-t-[1.5px] border-foreground pt-6 pb-20 sm:flex-row sm:items-start sm:justify-between lg:mt-28 lg:pb-28">
-      <ul className="flex flex-col gap-1 text-[17px] leading-snug">
-        {credits.map((c) => (
-          <li key={c.role}>
-            <span className="text-muted">{c.role} / </span>
-            {c.name}
-          </li>
-        ))}
-      </ul>
-      <ul className="flex flex-col">
+    // eslint-disable-next-line @next/next/no-img-element -- a plain picture of the app's own screen, sized by its tile
+    <img src={src} width={width} height={height} alt={alt} loading="lazy" decoding="async" className="block h-auto w-full rounded-[0.75rem] shadow-[0_0_0_1.5px_rgb(255_255_255/0.14)] lg:rounded-[1rem]" />
+  );
+}
+
+/** The way out of the case: the app. No credits (Olle, 11 November). */
+export function Foot({ links }: { links: readonly { label: string; href: string }[] }) {
+  return (
+    <footer className="mt-16 flex border-t-[1.5px] border-foreground pt-6 pb-20 lg:mt-28 lg:pb-28">
+      <ul className="flex flex-wrap gap-3">
         {links.map((l) => (
           <li key={l.href}>
             <a href={l.href} className="flex h-12 items-center rounded-full bg-foreground px-6 text-[15px] font-extrabold text-background">
