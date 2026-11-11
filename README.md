@@ -13,7 +13,7 @@ In the Claude app's **Code** tab, start a session on the Mac's **Developer** fol
 4. writes the client's problem in five lines under "The client's problem" (who pays and why now, what it costs them today, how they would see it worked, what limits them, who has to say yes), then finds out who uses it (fifteen minutes of desk research into the person and their moment, with sources and at least one primary signal such as app reviews) and writes it below under "Who uses it and how they feel", starts "Choices from the person" (each choice and what it ruled out, traced to a fact about them), and writes the facts of the world it lives in (how the data arrives, the rules, the money, the formats) under "The details that work",
 5. plans the build with you from that: questions for the client, the core flow and what's left out; then finds the look (about 20 minutes: what everyone in the trade does is ruled out, ten ideas from outside apps, and three built as real phone screens from safe to wild, side by side at http://localhost:3200/looks for you to pick from); then builds the first version whole, in the client's brand when the brief gives one, otherwise dark: the app at the live link (a phone first, laid out for a desktop too), with every situation in its own sheet (AGENTS.md → The first version is the product), and walks it as the person in every situation before showing you (AGENTS.md → The details work),
 6. near the end, after that walk, fills the case page at `/case`: the app shown the way a studio shows its own work, mostly big pictures of the app running live in phones, about a hundred words (AGENTS.md → The case page),
-7. draws every state of the first screen as editable artboards on a Claude Design canvas, and boils this README down to a Claude Whiteboard you present from, both linked from the README.
+7. draws every state of the first screen as editable artboards on a Claude Design canvas, and boils this README down to a Claude Whiteboard you present from. The canvas is linked from this README; the whiteboard and the order you present in are in `PRESENTING.md`, your own notes, so this README stays for the team.
 
 Without the command, do it by hand: on GitHub press **Use this template** (private), then tell Claude *"Clone github.com/Ollibolli8/NAME into ~/Developer/NAME. Work only in that folder: read its CLAUDE.md, AGENTS.md and HANDOFF.md first, then run npm ci and npm run dev."* Then on vercel.com: **Add New…** → **Project** → the repo → **Deploy**.
 
@@ -102,17 +102,6 @@ One sentence: what it is and who it is for.
 ## Not built, and why
 
 <!-- At least two things left out on purpose, and why that's right for this person (til- og fravalg). What I ran out of time for goes under "What I'd do next" instead. -->
-
-## Presenting it
-
-<!-- The order for the presentation, the client first, then the person: 1. the client's problem in half a minute (what
-     it costs them today, what the app does about it, how they would see it worked); 2. who it's for in half a minute
-     (the moment, three facts, what each changed, and how the client's own data would check them: support tickets,
-     addresses, usage), then one sentence for every row of Choices from the person, to be said aloud with the source
-     named: "Cheap and dear differ by height, not just colour, because sundhed.dk puts colour blindness at 5–8 % of
-     men."; 3. the three looks at /looks, what the trade does and why this one; 4. the app at /, in the situations
-     that show the details, then every state at once on the Claude Design canvas; 5. the desktop at /; 6. what I'd need and what's
-     next. Afterwards the studio gets /case to read in their own time. -->
 
 ## Ten-second test
 
