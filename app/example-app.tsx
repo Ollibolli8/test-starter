@@ -1,9 +1,8 @@
 "use client";
 
 // An example app, to show the pieces working together: the first screen as the hero (the answer in display type
-// over a signature form), a glass bar at the thumb, a sheet, and every situation switchable, from the sheet at / and
-// beside the phone at /stage. Delete this file once the brief's app replaces it (app/page.tsx and
-// app/stage/page.tsx import it).
+// over a signature form), a glass bar at the thumb, a sheet, and every situation switchable, from the
+// app's own sheet. Delete this file once the brief's app replaces it (app/page.tsx imports it).
 
 import { useState, type ReactNode } from "react";
 import { AppPage } from "@/components/app-page";
@@ -11,15 +10,14 @@ import { AppShell } from "@/components/app-shell";
 import { CountUp } from "@/components/count-up";
 import { Segmented } from "@/components/segmented";
 import { Sheet } from "@/components/sheet";
-import { useOnStage } from "@/components/on-stage";
-import { SituationList, Stage } from "@/components/stage";
+import { SituationList } from "@/components/situation-list";
 import { useSituation } from "@/lib/situations";
 import { situations, type SituationId } from "./example-situations";
 
 type Tab = "first" | "second";
 
-/** The app at / (on its own) or at /stage (in the phone, with the situations beside it). */
-export function ExampleApp({ stage = false }: { stage?: boolean }) {
+/** The app at /, on its own. */
+export function ExampleApp() {
   const [situation, setSituation] = useSituation(situations);
   const list = (
     <SituationList
@@ -28,16 +26,10 @@ export function ExampleApp({ stage = false }: { stage?: boolean }) {
       onChange={setSituation}
     />
   );
-  if (!stage)
-    return (
-      <AppPage>
-        <ExampleScreen situation={situation.id} list={list} />
-      </AppPage>
-    );
   return (
-    <Stage controls={list}>
+    <AppPage>
       <ExampleScreen situation={situation.id} list={list} />
-    </Stage>
+    </AppPage>
   );
 }
 
@@ -50,8 +42,6 @@ function ExampleScreen({
 }) {
   const [tab, setTab] = useState<Tab>("first");
   const [sheet, setSheet] = useState(false);
-  // In the stage's phone on a desktop the situations are beside it, so the sheet leaves them out there.
-  const onStage = useOnStage();
 
   return (
     <AppShell
@@ -104,7 +94,7 @@ function ExampleScreen({
             Where the answer comes from, how old it is, and what it assumes.
             Everything the first screen leaves out.
           </p>
-          <div className={onStage ? "mt-8 lg:hidden" : "mt-8"}>{list}</div>
+          <div className="mt-8">{list}</div>
         </Sheet>
       }
     >

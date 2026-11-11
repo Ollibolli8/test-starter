@@ -143,7 +143,7 @@
   }
 }
 
-/* The desktop stage's phone (components/stage.tsx): 868 px tall, scaled down to fit a shorter window, so the app
+/* A drawn phone at the "desktop" fit (components/phone.tsx): 868 px tall, scaled down to fit a shorter window, so the app
    inside keeps an iPhone's real layout. tan(atan2(a, b)) is a / b as a plain number, which CSS can't otherwise get
    from two lengths. */
 @media (min-width: 64rem) {

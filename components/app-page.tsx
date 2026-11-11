@@ -3,7 +3,7 @@
 // the middle of the window. On a desktop (from 1024 px) a `wide` app fills the window and lays itself out for it
 // (AppShell is a size container, so the app's `@5xl:` classes take over), and places the live link and QR code in its
 // own layout; an app that isn't `wide` stays a column, with the link and code in a corner from 1280 px.
-// The presentation is /stage (components/stage.tsx), where the app is always the phone. In a drawn phone on the case
+// In a drawn phone on the case
 // page (?frame=phone) the insets come from the drawing instead (--frame-top / --frame-bottom, app/globals.css).
 
 import type { ReactNode } from "react";

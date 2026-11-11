@@ -3,8 +3,7 @@ import { ExampleApp } from "./example-app";
 import { AppPage } from "@/components/app-page";
 import { AppShell } from "@/components/app-shell";
 
-// The link: the app on its own, on a phone and a desktop alike (components/app-page.tsx). The presentation is
-// /stage. Suspense because the app reads the situation from the address; the server's HTML is the loading frame.
+// The link: the app on its own, on a phone and a desktop alike (components/app-page.tsx). Suspense because the app reads the situation from the address; the server's HTML is the loading frame.
 // Replace ./example-app with the brief's app, and keep this shape.
 export default function Home() {
   return (

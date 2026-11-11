@@ -85,9 +85,6 @@ export function CasePage({ lang, children }: { lang: string; children: ReactNode
 
 const LINKS = [
   { href: "/", label: "The app" },
-  { href: "/stage", label: "Stage" },
-  // From a tablet up: four links don't fit beside the name on a phone, where the credits' links carry it.
-  { href: "/states", label: "States", wide: true },
   { href: "/looks", label: "Looks" },
 ] as const;
 

@@ -2,7 +2,7 @@
 
 // A drawn iPhone: a 390 × 844 screen (the width every check uses) in a 12 px bezel, with a status bar, the island and
 // the home indicator. Two fits:
-// - "desktop" (the stage, components/stage.tsx): the app full screen on a phone, centred on a tablet, and drawn as a
+// - "desktop": the app full screen on a phone, centred on a tablet, and drawn as a
 //   phone from 1024 px, scaled down to fit a short window (.device-fit in globals.css).
 // - "always" (the looks board, components/look-board.tsx): drawn as a phone on every screen, at its real size; the
 //   board scales it.

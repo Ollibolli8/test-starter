@@ -2,9 +2,9 @@
 
 // The app's frame: a header under the notch, one scrolling screen, a bar at the bottom where the thumb is, and a
 // layer for sheets. The bar floats over the screen in glass, so the content passes under it and stays in view.
-// It lays out in its frame (the screen on a phone, a column at / on a desktop, the drawn phone at /stage), so
+// It lays out in its frame (the screen on a phone, a column at / on a desktop, a drawn phone on the case page), so
 // everything is `absolute`, never `fixed`, and keeps clear of the notch and the home bar through --app-top and
-// --app-bottom (set by components/app-page.tsx and components/stage.tsx).
+// --app-bottom (set by components/app-page.tsx).
 
 import { useEffect, useRef, type ReactNode } from "react";
 
@@ -38,7 +38,7 @@ export function AppShell({ header, bar, overlay, children }: AppShellProps) {
   return (
     // A size container, so the app lays itself out by the room it has (a phone, the stage's phone, a desktop window)
     // with `@5xl:` classes, never by the window's width.
-    <div ref={shell} className="@container relative isolate flex h-full flex-col overflow-hidden bg-background">
+    <div ref={shell} className="@container relative isolate flex h-full flex-col overflow-clip bg-background">
       {header ? (
         <header data-behind-sheet className="relative z-10 shrink-0 px-5 pt-[calc(var(--app-top,0px)+0.75rem)] pb-2">
           {header}

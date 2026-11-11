@@ -103,11 +103,9 @@ export const CASE = {
     { role: "Idea, art direction and design", name: "Oliver Kure Olsen" },
     { role: "Built with agentic coding", name: "Claude Code" },
   ],
-  /** The live link, the presentation, the looks and the repository. */
+  /** The live link, the looks and the repository. */
   links: [
     { label: "Open the app", href: "/" },
-    { label: "Every situation, on stage", href: "/stage" },
-    { label: "Every situation, side by side", href: "/states" },
     { label: "The three looks", href: "/looks" },
   ],
 };

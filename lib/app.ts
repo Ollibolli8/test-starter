@@ -13,6 +13,6 @@ export const APP = {
   scheme: "dark" as "dark" | "light",
   /** The app's background (--background in app/globals.css): the phone's browser bars, the install splash, the icon. */
   colour: "#0a0a0a",
-  /** The live link once it's on Vercel; shown beside the app on a desktop and on /stage as "open it on your phone". */
+  /** The live link once it's on Vercel; shown beside the app on a desktop as "open it on your phone". */
   liveUrl: "" as string,
 } as const;

@@ -3,7 +3,7 @@ import { APP } from "@/lib/app";
 
 /**
  * The live link and its QR code, so a reviewer opens the app on their own phone: small in a corner beside the app
- * at / (in the app's language), large on /stage for the room. Nothing until APP.liveUrl is set.
+ * at / (in the app's language). Nothing until APP.liveUrl is set.
  */
 export function OpenOnPhone({ title, large = false }: { title: string; large?: boolean }) {
   if (!APP.liveUrl) return null;

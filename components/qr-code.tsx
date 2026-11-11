@@ -1,4 +1,4 @@
-// The live link as a QR code, so a phone opens the app from the desktop page or from /stage on a shared screen.
+// The live link as a QR code, so a phone opens the app from the desktop page.
 // Empty until the app is on Vercel. Then run `npx qrcode -t svg -e M "<the live URL>"` and copy from its output the
 // second path's d into `path`, and the viewBox's width minus 8 (the quiet zone) into `size`.
 
