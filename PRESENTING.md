@@ -9,6 +9,6 @@ Olle's own notes: the order he presents in and the lines he says. What the team 
      (the moment, three facts, what each changed, and how the client's own data would check them: support tickets,
      addresses, usage), then one sentence for every row of Choices from the person, to be said aloud with the source
      named: "Cheap and dear differ by height, not just colour, because sundhed.dk puts colour blindness at 5–8 % of
-     men."; 3. the three looks at /looks, what the trade does and why this one; 4. the app at /, in the situations
+     men."; 3. the three looks at /looks, what the trade does, why this one, and the rule the pick revealed (one sentence, and two things it has decided since); 4. the app at /, in the situations
      that show the details, then every state at once on the Claude Design canvas; 5. the desktop at /; 6. what I'd need and what's
      next. Afterwards the studio gets /case to read in their own time. -->

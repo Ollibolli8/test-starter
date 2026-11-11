@@ -49,7 +49,7 @@ Recommend one in a sentence, with what it risks and how the build will guard aga
 
 ## 4. Olle picks, then it's built whole
 
-Olle picks from the screens, or mixes them ("the Bold form with the Crafted type"). Write the pick and the two that lost in README → Decisions, each with why. Move the picked screen into the app and build it whole (AGENTS.md → The first version is the product). If Olle has said to build without asking, build the recommendation and show him `/looks` with it.
+Olle picks from the screens, or mixes them ("the Bold form with the Crafted type"). Write the pick and the two that lost in README → Decisions, each with why. Then name the rule the pick reveals (Olle, 11 November): one sentence saying what the picked screen does for this person that the others don't. He often sees it only after picking, so ask him or propose it and let him word it; it goes in the README with the three looks as pictures, in `PRESENTING.md` and on the whiteboard, and later choices are checked against it. Move the picked screen into the app and build it whole (AGENTS.md → The first version is the product). If Olle has said to build without asking, build the recommendation and show him `/looks` with it.
 
 `/looks` stays at hand-in (noindex), with the three real looks: in the presentation it shows that the look was chosen, not defaulted to.
 

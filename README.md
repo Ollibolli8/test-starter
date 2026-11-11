@@ -97,7 +97,7 @@ One sentence: what it is and who it is for.
 
 <!-- A running log while building, one line each: what I chose, because … Cut to the 4–5 that matter before hand-in.
      Choices the person shows go in Choices from the person; this is for the rest (Ruled out: what everyone in the trade
-     does; the look picked and the two that lost, each with why; craft picks; stack). -->
+     does; the look picked and the two that lost, each with why, as pictures, and the one-sentence rule the pick revealed; craft picks; stack). -->
 
 ## Not built, and why
 
