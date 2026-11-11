@@ -67,11 +67,11 @@ A creative developer is judged on more than how fast something good-looking appe
 
 ### The presentation, on a Claude Whiteboard
 
-Olle presents from a Claude Whiteboard (11 November): the README boiled down to an infographic, so a studio sees him make the app, present it, and lay the states out on a design canvas. It is made near the end, from the finished README (the `/new-test` command's last step).
+Olle presents from a Claude Whiteboard (11 November): an illustrated infographic of the presentation, so a studio sees him make the app, present it, and lay the states out on a design canvas. It is made near the end, from the finished README (the `/new-test` command's last step).
 
-- **Everything is on it, in a few words.** One frame per README section, in the presentation's order, read left to right in two rows: the client, the person, what we know and what the app does about it, the look, the app, the details that work, the AI if there is one, what was assumed, how it's built, what was left out and what is needed.
-- **A statistic is a big number**, with what it counts and who says it in small type under it, and the choice it led to in the accent colour. A pair (what it costs → what the app does, a fact of the world → what the app does, a question → the assumption) is one line with an arrow. Screens are pictures taken from the running app.
-- **No tables, no paragraphs, no boxes around text.** His first board had them and was "way too much text". If a frame needs a sentence to be understood, the frame is wrong.
+- **One drawn picture per step, a title and one line.** Every step of the presentation is on it, as a picture: the client's problem, the person's moment, what we know, the choices, the look, the app, the details, the AI if there is one, how it's built, what is still open, what is needed. Under each picture its number and name, and one line of at most eight words. Arrows join the steps, about five to a row.
+- **The pictures carry it.** Each is a small drawing of the real thing in that step (a card terminal and a phone for "at the till", ten dots with four filled for "4 in 10", a calendar with the 31st crossed), drawn as the Whiteboard type's own SVG pictures, plus one larger picture of the idea beside the title. The app's own colours are real filled circles, and the app itself is its real screens, taken from the running app, with each situation's name under it.
+- **Words stay in the README.** No tables, no lists, no paragraphs, no frames of text. He rejected two boards for this: the first had tables and captions ("way too much text"), the second had every README row in a few words ("basically only text now"). The one statistic that is drawn names who says it.
 - It is a copy of the README, so change both together. The live part of the presentation is still the app itself.
 
 ### Stack (fixed)
