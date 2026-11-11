@@ -56,16 +56,23 @@ A creative developer is judged on more than how fast something good-looking appe
 
 ### The case page
 
-`/case` (`app/case/page.tsx`, noindex) shows the product the way a studio shows its own work: a scroll-through brand case with the app running inside it. It is the frame around the product, never in its place, so it comes last: after the details pass, about 20–30 minutes, filled rather than designed.
+`/case` (`app/case/page.tsx`, noindex) shows the product the way a studio shows its own work, after Signifly's own cases (Sundhedskort: about 360 words over some twenty pictures). Mostly pictures, about a hundred words. It is the frame around the product, never in its place, so it comes last: after the details pass, about 20–30 minutes.
 
-- **Filled from the README.** The blocks are in `components/case/` (title, hero, facts, identity, statement, screens, details, components, desktop, credits); every word and pick is in `app/case/content.tsx`. The brief and the person give the facts and the statement, Design choices the identity, The details that work the details. The look is the app's own tokens and type, so the case is the brand, not a second design.
-- **The app live, never a screenshot.** Every phone and browser on it is the real app at `/?s=<situation>` (`components/case/live.tsx`): a reviewer on a laptop taps it right there, a tap on a phone opens that screen full size. The hero is the first screen; Screens are three or four situations that show the range; each detail stands beside its situation (the fact, what the app does, where it's tested), and the motion moment gets "Play it again". Keep the situations in a plain module, not a `"use client"` file, so the case can read them (`app/example-situations.ts`).
-- **The real components.** The Components section shows the app's own pieces in the state that shows them best (`app/case/parts.tsx`, exported from the app); never redraw one for the case.
-- **Colour from the build.** The palette reads `app/globals.css` and prints each colour's hex, token and contrast; name the colours in the brand's words.
-- **Numbers are counts, never results:** situations, tests, taps to the answer. Nothing about users, savings or reach.
-- **Scaled to the brief.** A brand or concept brief gets the whole case. A feature for a client's existing product keeps the title, hero, facts, screens, details and credits, and drops Identity and Components (their brand isn't ours to present): delete sections in `app/case/page.tsx`, the numbers follow.
-- In the studio's language while the app keeps the person's, checked at 390 px and 1440 px and with reduced motion. Olle presents from the app itself; `/case` is what the studio reads afterwards, linked from README → Live.
-- **Pictures before words** (Olle, 11 November): a studio's own case pages are mostly large pictures of the product in use, the app on a phone, big, with a line or two between them. Each section is one large visual of the app and at most two sentences. The reasoning stays in the README and is said in the presentation.
+- **Pictures before words** (Olle, 11 November). Big tiles of the app on full-colour grounds (`Tile`), two half tiles side by side (`Pair`), one sentence in large type between groups (`Line`), and a line of small type only where a picture needs it (`Caption`). The pieces are in `components/case/blocks.tsx` and the page holds its own few words. The reasoning stays in the README and is said in the presentation.
+- **The order:** the two-line title (the client, then the project); the first screen in a phone on the brand's colour; three facts, one paragraph of at most thirty words and four numbers; the idea as one picture, drawn in type or the signature form; a line; the hardest situation beside its signature form; a row of the other situations; a line; colour and type; the laptop; the credits.
+- **The app live, never a screenshot.** Every phone and browser on it is the real app at `/?s=<situation>` (`components/case/live.tsx`): a reviewer on a laptop taps it right there, a tap on a phone opens that screen full size. Keep the situations in a plain module, not a `"use client"` file, so the case can read them.
+- **Numbers are counts, never results:** situations, tests, taps to the answer, each with its date if it can change. Nothing about users, savings or reach.
+- **A feature on a client's existing product** leaves out the colour and type pair: their brand isn't ours to present.
+- In the studio's language while the app keeps the person's, checked at 390 px and 1440 px and with reduced motion. Olle presents from the whiteboard and the app; `/case` is what the studio reads afterwards, linked from README → Live.
+
+### The presentation, on a Claude Whiteboard
+
+Olle presents from a Claude Whiteboard (11 November): the README boiled down to an infographic, so a studio sees him make the app, present it, and lay the states out on a design canvas. It is made near the end, from the finished README (the `/new-test` command's last step).
+
+- **Everything is on it, in a few words.** One frame per README section, in the presentation's order, read left to right in two rows: the client, the person, what we know and what the app does about it, the look, the app, the details that work, the AI if there is one, what was assumed, how it's built, what was left out and what is needed.
+- **A statistic is a big number**, with what it counts and who says it in small type under it, and the choice it led to in the accent colour. A pair (what it costs → what the app does, a fact of the world → what the app does, a question → the assumption) is one line with an arrow. Screens are pictures taken from the running app.
+- **No tables, no paragraphs, no boxes around text.** His first board had them and was "way too much text". If a frame needs a sentence to be understood, the frame is wrong.
+- It is a copy of the README, so change both together. The live part of the presentation is still the app itself.
 
 ### Stack (fixed)
 

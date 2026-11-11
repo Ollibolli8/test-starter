@@ -1,5 +1,5 @@
 // The example app's situations (lib/situations.ts), in a plain module rather than the app's client file, so the
-// case page (app/case/content.tsx), a server component, can read them too. Delete it with app/example-app.tsx.
+// case page (app/case/page.tsx), a server component, can read them too. Delete it with app/example-app.tsx.
 
 import type { Situation } from "@/lib/situations";
 
