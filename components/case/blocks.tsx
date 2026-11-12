@@ -96,7 +96,7 @@ export function CaseFacts({ facts, intro, stats }: { facts: readonly { label: st
       <p className="mt-10 max-w-[34ch] text-[clamp(1.25rem,1rem+0.9vw,1.75rem)] leading-[1.3] font-medium lg:col-span-8 lg:mt-0">{intro}</p>
       <dl className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:col-span-9 lg:col-start-4 lg:mt-16">
         {stats.map((s) => (
-          <div key={s.label} className="flex flex-col-reverse justify-end gap-1.5">
+          <div key={s.label} className="flex flex-col-reverse justify-end gap-3">
             <dt className="max-w-[14rem] text-[14px] leading-snug text-muted">{s.label}</dt>
             <dd className="text-[clamp(2.5rem,1.8rem+3vw,4.5rem)] leading-[0.9] font-semibold tracking-[-0.03em] tabular-nums">{s.value}</dd>
           </div>
